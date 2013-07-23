@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Class: Base</title>
+    
+    <link type="text/css" rel="stylesheet" href="../css/cui.css">
+    <link type="text/css" rel="stylesheet" href="../css/guide.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+    <link type="text/css" rel="stylesheet" href="../js/google-code-prettify/prettify.css">
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script src="../js/libs/handlebars.js"></script>
+    <script src="../js/libs/jquery.js"></script>
+    <script src="../js/libs/toe.js"></script>
+    <script src="../js/libs/jquery-fingerpointer.js"></script>
+    <script src="../js/libs/jquery-gridlayout.js"></script>
+    <script src="../js/libs/jquery-reflow.js"></script>
+    <script src="../js/CUI.js"></script>
+</head>
+
+<body>
+
+
+  <header class="top">
+
+    <div class="logo"><img src="../images/theme/cloudui.png"></div>
+
+    <nav class="main">
+      <a href="../index.html">Guide</a>
+      <a href="index.html" class="selected">Docs</a>
+      <a href="https://git.corp.adobe.com/Coral/CoralUI/">Github</a>
+      <a href="../cui.zip">Download</a>
+    </nav>
+
+    <div class="drawer">
+      <div class="badge">Generated 5/29 at 16:51</div>
+    </div>
+
+  </header>
+
+  <div class="page">
+    <div class="rail left fixed">
+      <div class="wrap">
+        <section class="links"><h4>Classes</h4><nav><a href="Base.html">Base</a><a href="CUI.Accordion.html">Accordion</a><a href="CUI.Alert.html">Alert</a><a href="CUI.CardView.html">CardView</a><a href="CUI.CharacterCount.html">CharacterCount</a><a href="CUI.Datepicker.html">Datepicker</a><a href="CUI.DraggableList.html">DraggableList</a><a href="CUI.Dropdown.html">Dropdown</a><a href="CUI.DropdownList.html">DropdownList</a><a href="CUI.FileUpload.html">FileUpload</a><a href="CUI.Filters.html">Filters</a><a href="CUI.LabeledSlider.html">LabeledSlider</a><a href="CUI.Modal.html">Modal</a><a href="CUI.PathBrowser.html">PathBrowser</a><a href="CUI.Popover.html">Popover</a><a href="CUI.Rail.html">Rail</a><a href="CUI.rte.plugins.ControlPlugin.html">ControlPlugin</a><a href="CUI.Slider.html">Slider</a><a href="CUI.Tabs.html">Tabs</a><a href="CUI.Tooltip.html">Tooltip</a><a href="CUI.Tour.html">Tour</a><a href="CUI.Widget.html">Widget</a><a href="CUI.Wizard.html">Wizard</a></nav></section><section class="links"><h4>Namespaces</h4><nav><a href="CUI.html">CUI</a><a href="CUI.util.html">util</a><a href="CUI.util.HTTP.html">HTTP</a><a href="cui-contentloaded.html">cui-contentloaded</a></nav></section><section class="links"><h4>Global</h4><nav><a href="global.html#BLANK_IMAGE">BLANK_IMAGE</a><a href="global.html#calc">calc</a><a href="global.html#Class">Class</a><a href="global.html#construct">construct</a><a href="global.html#DragAction">DragAction</a><a href="global.html#editorKernel">editorKernel</a><a href="global.html#getClippingParent">getClippingParent</a><a href="global.html#getParameter">getParameter</a><a href="global.html#getSpace">getSpace</a><a href="global.html#popover">popover</a><a href="global.html#registerAdditionalClasses">registerAdditionalClasses</a><a href="global.html#setPosition">setPosition</a><a href="global.html#TOOLBAR_ACTIVE">TOOLBAR_ACTIVE</a><a href="global.html#TOOLBARITEM_ICON_PREFIX">TOOLBARITEM_ICON_PREFIX</a></nav></section>
+      </div>
+    </div>
+
+    <div class="content">
+        <!--<h1 class="line">Class: Base</h1>-->
+        
+          
+
+
+
+<section>
+    
+<h1 class="line">Base
+</h1>
+
+    <div class="class-description">The abstract class which contains methods that all classes will inherit.
+    Base cannot be extended or instantiated and does not exist in the global namespace.
+    If you create a class using <code class="prettyprint">new Class()</code> or <code class="prettyprint">MyClass.extend()</code>, it will come with Base' methods.</div>
+
+
+
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+    
+    
+        
+<dt>
+    <h2 class="line">Constructor</h2>
+    
+    
+</dt>
+
+
+<div class="description">
+    Base is an abstract class and cannot be instantiated directly. Constructors are chained automatically, so you never need to call the constructor of an inherited class directly
+</div>
+
+
+<dd>
+
+    
+    
+    
+    
+    
+        <h4>Parameters:</h4>
+        
+
+<table class="data noHover">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name">options</td>
+            
+            
+            <td class="type">
+            
+                <span class="param-type"><a href="Object.html">Object</a></span>
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">Instance options. Guaranteed to be defined as at least an empty Object</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>Class.js, line 21</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+</dd>
+
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        <h2 class="line">Methods</h2>
+        
+        <dl>
+            
+<dt>
+    <h3 class="name" id="extend"><span class="type-signature">&lt;static> </span>extend</h3>
+    
+    
+</dt>
+
+
+<div class="description">
+    Extends this class using the passed descriptor. 
+    Called on the Class itself (not an instance), this is an alternative to using <code class="prettyprint">new Class()</code>.
+    Any class created using Class will have this static method on the class itself.
+</div>
+
+
+<dd>
+
+    
+    
+    
+    
+    
+        <h4>Parameters:</h4>
+        
+
+<table class="data noHover">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name">descriptor</td>
+            
+            
+            <td class="type">
+            
+                <span class="param-type"><a href="Object.html">Object</a></span>
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">Descriptor object
+                
+
+<table class="data noHover">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name">toString</td>
+            
+            
+            <td class="type">
+            
+                <span class="param-type">String or Function</span>
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">A string or method to use for the toString of this class and instances of this class</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name">extend</td>
+            
+            
+            <td class="type">
+            
+                <span class="param-type"><a href="Object.html">Object</a></span>
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">The class to extend</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name">construct</td>
+            
+            
+            <td class="type">
+            
+                <span class="param-type"><a href="Function.html">Function</a></span>
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">The constructor (setup) method for the new class</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name">destruct</td>
+            
+            
+            <td class="type">
+            
+                <span class="param-type"><a href="Function.html">Function</a></span>
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">The destructor (teardown) method for the new class</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name">*</td>
+            
+            
+            <td class="type">
+            
+                <span class="param-type">Anything</span>
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">Other methods and properties for the new class</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+            </td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>Class.js, line 57</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+</dd>
+
+        
+            
+<dt>
+    <h3 class="name" id="bind"><span class="type-signature"></span>bind</h3>
+    
+    
+</dt>
+
+
+<div class="description">
+    Binds a method of this instance to the execution scope of this instance.
+</div>
+
+
+<dd>
+
+    
+    
+    
+    
+    
+        <h4>Parameters:</h4>
+        
+
+<table class="data noHover">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name">func</td>
+            
+            
+            <td class="type">
+            
+                <span class="param-type"><a href="Function.html">Function</a></span>
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">The this.method you want to bind</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>Class.js, line 23</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+</dd>
+
+        
+            
+<dt>
+    <h3 class="name" id="destruct"><span class="type-signature"></span>destruct</h3>
+    
+    
+</dt>
+
+
+<div class="description">
+    Destroys this instance and frees associated memory. Destructors are chained automatically, so the <code class="prettyprint">destruct()</code> method of all inherited classes will be called for you
+</div>
+
+
+<dd>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>Class.js, line 192</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+</dd>
+
+        
+            
+<dt>
+    <h3 class="name" id="inherited"><span class="type-signature"></span>inherited</h3>
+    
+    
+</dt>
+
+
+<div class="description">
+    Call the superclass method with the same name as the currently executing method
+</div>
+
+
+<dd>
+
+    
+    
+    
+    
+    
+        <h4>Parameters:</h4>
+        
+
+<table class="data noHover">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name">args</td>
+            
+            
+            <td class="type">
+            
+                <span class="param-type">Arguments</span>
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">Unadulterated arguments array from calling function</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>Class.js, line 136</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+</dd>
+
+        </dl>
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+        
+    </div>
+  </div>
+
+  <script> prettyPrint(); </script>
+</body>
+</html>

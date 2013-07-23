@@ -1,0 +1,115 @@
+<%= form_for(@db_call) do |f| %>
+  <p>
+      <div class="selector" name="data_centers">
+        <label><input id="na_dc" name="na_dc" type="checkbox" <%= 'checked' if toCheck(@db_call, 'na') -%> >
+        <span>Dallas</span>
+        </label>
+
+        <label><input id="emea_dc" name="emea_dc" type="checkbox" <%= 'checked' if toCheck(@db_call, 'emea') -%>>
+        <span>Dublin</span>
+        </label>
+
+        <label><input id="apac_dc" name="apac_dc" type="checkbox" <%= 'checked' if toCheck(@db_call, 'apac') -%>>
+        <span>Singapore</span>
+        </label>
+      </div>
+
+
+      <h2>Log Criteria</h2>
+
+  <!--     <div class="datepicker" data-init="datepicker">
+        <input type="date" value="1987-04-06" name="start_date">
+        <button class="icon-calendar small">Datepicker</button>
+      </div>
+
+      <div class="datepicker" data-init="datepicker" data-disabled="true">
+        <input type="date" value="1987-04-06" name="end_date" disabled>
+        <button class="icon-calendar small" disabled>Datepicker</button>
+      </div> -->
+
+      <div class="field">
+        <%= f.label :startDate %><br />
+        <%= f.date_select :startDate %>
+      </div>
+      <div class="field">
+        <%= f.label :endDate %><br />
+        <%= f.date_select :endDate %>
+      </div> 
+      
+      <div class="selector">
+        <label>
+          <input id="dateGroup_daily" name="dateGroup" type="radio" value="daily" <%= 'checked' if @db_call.dateGroup.nil? or @db_call.dateGroup == "daily"-%>>
+          <span> Daily </span>
+        </label>
+        <label>
+          <input id="dateGroup_weekly" name="dateGroup" type="radio" value="weekly" <%= 'checked' if @db_call.dateGroup == "weekly"-%>>
+          <span> Weekly </span>
+        </label>
+        <label>
+          <input id="dateGroup_monthly" name="dateGroup" type="radio" value="monthly" <%= 'checked' if @db_call.dateGroup == "monthly"-%>>
+          <span> Monthly </span>
+        </label>
+      </div>
+
+      <p><div class="selector">
+        <label><input id="user" name="user" type="checkbox" <%= 'checked' if toCheck(@db_call, 'user') -%>>
+        <span>User</br>
+          <input type="text" id = "user_text" name="user_text" value="<%= toFill(@db_call, 'user') if not toFill(@db_call, 'user').nil? -%>">
+        </span>
+        </label>
+
+        <label><input id="log_event" name="log_event" type="checkbox" <%= 'checked' if toCheck(@db_call, 'apiEvent') -%>>
+        <span>Log Event</br>
+          <input type="text" id = "log_event_text" name="log_event_text" value="<%= toFill(@db_call, 'apiEvent') if not toFill(@db_call, 'apiEvent').nil? -%>"></span>
+        </label>
+      </div></p>
+
+      <p><div class="selector">
+        <label><input id="company" name="company" type="checkbox" <%= 'checked' if toCheck(@db_call, 'companyName') -%>>
+        <span>Company Name</br><input type="text" id = "company_text" name="company_text" value="<%= toFill(@db_call, 'companyName') if not toFill(@db_call, 'companyName').nil? -%>"></span>
+        </label>
+        
+        <label><input id="application" name="application" type="checkbox" <%= 'checked' if toCheck(@db_call, 'applicationUsed') -%>>
+        <span>Application</br><input type="text" id = "application_text" name="application_text" value="<%= toFill(@db_call, 'applicationUsed') if not toFill(@db_call, 'applicationUsed').nil? -%>"></span>
+        </label>
+      </div></p>
+
+
+      <h2>Statistics</h2>
+
+      <p><div class="selector">
+        <label><input id="max_eTime" name="max_eTime" type="checkbox" <%= 'checked' if toCheck(@db_call, 'maxExecTime') -%>>
+        <span>Max Execution Time</span>
+        </label>
+        <label><input id="mean_eTime" name="mean_eTime" type="checkbox" <%= 'checked' if toCheck(@db_call, 'meanExecTime') -%>>
+        <span>Mean Execution Time</span>
+        </label>
+      </div></p>
+
+      <p><div class="selector">
+        <label><input id="min_eTime" name="min_eTime" type="checkbox" <%= 'checked' if toCheck(@db_call, 'minExecTime') -%>>
+        <span>Min Execution Time</span>
+        </label>
+        <label><input id="med_eTime" name="med_eTime" type="checkbox" <%= 'checked' if toCheck(@db_call, 'meanExecTime') -%>>
+        <span>Median Execution Time</span>
+        </label>
+      </div></p>
+
+      <h2>Display</h2>
+
+      <p><div class="selector">
+        <label><input name="draw_table" type="checkbox" <%= 'checked' if toCheck(@db_call, 'table') -%>>
+        <span><%= image_tag "Table.svg", width: '50'%></span>
+        </label>
+        <label><input name="draw_bar" type="checkbox" <%= 'checked' if toCheck(@db_call, 'barChart') -%>>
+        <span><%= image_tag "GraphBarHorizontal.svg", width: '50'%></span>
+        </label>
+        <label><input name="draw_pie" type="checkbox" <%= 'checked' if toCheck(@db_call, 'pieChart') -%>>
+        <span><%= image_tag "GraphPie.svg", width: '50'%></span>
+        </label>
+
+      </div></p>
+
+      <input class="button" role="button" name="commit" type="submit" value="Create" />
+  </p>
+<%end%>

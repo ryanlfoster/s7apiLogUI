@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  indVars: MyString
+  statsQueried: MyString
+  pipelineTask: MyString
+  startDate: 2013-07-16
+  endDate: 2013-07-16
+
+two:
+  indVars: MyString
+  statsQueried: MyString
+  pipelineTask: MyString
+  startDate: 2013-07-16
+  endDate: 2013-07-16

@@ -1,0 +1,1310 @@
+[
+  {
+    "selector": "icon-accordiondown",
+    "file": "AccordionDown.svg"
+  },
+  {
+    "selector": "icon-accordionleft",
+    "file": "AccordionLeft.svg"
+  },
+  {
+    "selector": "icon-accordionright",
+    "file": "AccordionRight.svg"
+  },
+  {
+    "selector": "icon-accordionup",
+    "file": "AccordionUp.svg"
+  },
+  {
+    "selector": "icon-actions",
+    "file": "Actions.svg"
+  },
+  {
+    "selector": "icon-add-circle",
+    "file": "Add-Circle.svg"
+  },
+  {
+    "selector": "icon-add",
+    "file": "Add.svg"
+  },
+  {
+    "selector": "icon-adjust",
+    "file": "Adjust.svg"
+  },
+  {
+    "selector": "icon-adobeanalytics",
+    "file": "AdobeAnalytics.svg"
+  },
+  {
+    "selector": "icon-adobeexperiencemanager",
+    "file": "AdobeExperienceManager.svg"
+  },
+  {
+    "selector": "icon-adobemediaoptimizer",
+    "file": "AdobeMediaOptimizer.svg"
+  },
+  {
+    "selector": "icon-adobesocial",
+    "file": "AdobeSocial.svg"
+  },
+  {
+    "selector": "icon-adobetarget",
+    "file": "AdobeTarget.svg"
+  },
+  {
+    "selector": "icon-alert",
+    "file": "Alert.svg"
+  },
+  {
+    "selector": "icon-alertadd",
+    "file": "AlertAdd.svg"
+  },
+  {
+    "selector": "icon-alias",
+    "file": "Alias.svg"
+  },
+  {
+    "selector": "icon-anchor",
+    "file": "Anchor.svg"
+  },
+  {
+    "selector": "icon-android",
+    "file": "Android.svg"
+  },
+  {
+    "selector": "icon-answer",
+    "file": "Answer.svg"
+  },
+  {
+    "selector": "icon-answerfavorite",
+    "file": "AnswerFavorite.svg"
+  },
+  {
+    "selector": "icon-apple",
+    "file": "Apple.svg"
+  },
+  {
+    "selector": "icon-archive",
+    "file": "Archive.svg"
+  },
+  {
+    "selector": "icon-arrowdown",
+    "file": "ArrowDown.svg"
+  },
+  {
+    "selector": "icon-arrowleft",
+    "file": "ArrowLeft.svg"
+  },
+  {
+    "selector": "icon-arrowright",
+    "file": "ArrowRight.svg"
+  },
+  {
+    "selector": "icon-arrowup",
+    "file": "ArrowUp.svg"
+  },
+  {
+    "selector": "icon-asset",
+    "file": "Asset.svg"
+  },
+  {
+    "selector": "icon-assetcheck",
+    "file": "AssetCheck.svg"
+  },
+  {
+    "selector": "icon-attach",
+    "file": "Attach.svg"
+  },
+  {
+    "selector": "icon-attachmentexclude",
+    "file": "AttachmentExclude.svg"
+  },
+  {
+    "selector": "icon-back",
+    "file": "Back.svg"
+  },
+  {
+    "selector": "icon-bell",
+    "file": "Bell.svg"
+  },
+  {
+    "selector": "icon-bidrule",
+    "file": "BidRule.svg"
+  },
+  {
+    "selector": "icon-bidruleadd",
+    "file": "BidRuleAdd.svg"
+  },
+  {
+    "selector": "icon-blog",
+    "file": "Blog.svg"
+  },
+  {
+    "selector": "icon-blur",
+    "file": "Blur.svg"
+  },
+  {
+    "selector": "icon-book",
+    "file": "Book.svg"
+  },
+  {
+    "selector": "icon-bookmark",
+    "file": "Bookmark.svg"
+  },
+  {
+    "selector": "icon-breakdown",
+    "file": "Breakdown.svg"
+  },
+  {
+    "selector": "icon-breakdownadd",
+    "file": "BreakdownAdd.svg"
+  },
+  {
+    "selector": "icon-brush",
+    "file": "Brush.svg"
+  },
+  {
+    "selector": "icon-building",
+    "file": "Building.svg"
+  },
+  {
+    "selector": "icon-calendar",
+    "file": "Calendar.svg"
+  },
+  {
+    "selector": "icon-calendarlocked",
+    "file": "CalendarLocked.svg"
+  },
+  {
+    "selector": "icon-calendarunlocked",
+    "file": "CalendarUnlocked.svg"
+  },
+  {
+    "selector": "icon-camera",
+    "file": "Camera.svg"
+  },
+  {
+    "selector": "icon-campaign",
+    "file": "Campaign.svg"
+  },
+  {
+    "selector": "icon-campaignadd",
+    "file": "CampaignAdd.svg"
+  },
+  {
+    "selector": "icon-campaignclose",
+    "file": "CampaignClose.svg"
+  },
+  {
+    "selector": "icon-campaigndelete",
+    "file": "CampaignDelete.svg"
+  },
+  {
+    "selector": "icon-campaignedit",
+    "file": "CampaignEdit.svg"
+  },
+  {
+    "selector": "icon-campaignremove",
+    "file": "CampaignRemove.svg"
+  },
+  {
+    "selector": "icon-check-circle",
+    "file": "Check-Circle.svg"
+  },
+  {
+    "selector": "icon-check",
+    "file": "Check.svg"
+  },
+  {
+    "selector": "icon-chevrondown",
+    "file": "ChevronDown.svg"
+  },
+  {
+    "selector": "icon-chevronleft",
+    "file": "ChevronLeft.svg"
+  },
+  {
+    "selector": "icon-chevronright",
+    "file": "ChevronRight.svg"
+  },
+  {
+    "selector": "icon-chevronup",
+    "file": "ChevronUp.svg"
+  },
+  {
+    "selector": "icon-clock",
+    "file": "Clock.svg"
+  },
+  {
+    "selector": "icon-close-circle",
+    "file": "Close-Circle.svg"
+  },
+  {
+    "selector": "icon-close",
+    "file": "Close.svg"
+  },
+  {
+    "selector": "icon-cloud",
+    "file": "Cloud.svg"
+  },
+  {
+    "selector": "icon-code",
+    "file": "Code.svg"
+  },
+  {
+    "selector": "icon-collection",
+    "file": "Collection.svg"
+  },
+  {
+    "selector": "icon-collectionadd",
+    "file": "CollectionAdd.svg"
+  },
+  {
+    "selector": "icon-collectionaddto",
+    "file": "CollectionAddTo.svg"
+  },
+  {
+    "selector": "icon-colorpalette",
+    "file": "ColorPalette.svg"
+  },
+  {
+    "selector": "icon-comment",
+    "file": "Comment.svg"
+  },
+  {
+    "selector": "icon-commentadd",
+    "file": "CommentAdd.svg"
+  },
+  {
+    "selector": "icon-compass",
+    "file": "Compass.svg"
+  },
+  {
+    "selector": "icon-confidencefour",
+    "file": "ConfidenceFour.svg"
+  },
+  {
+    "selector": "icon-confidenceone",
+    "file": "ConfidenceOne.svg"
+  },
+  {
+    "selector": "icon-confidencethree",
+    "file": "ConfidenceThree.svg"
+  },
+  {
+    "selector": "icon-confidencetwo",
+    "file": "ConfidenceTwo.svg"
+  },
+  {
+    "selector": "icon-conversionfunnel",
+    "file": "ConversionFunnel.svg"
+  },
+  {
+    "selector": "icon-copy",
+    "file": "Copy.svg"
+  },
+  {
+    "selector": "icon-coral",
+    "file": "Coral.svg"
+  },
+  {
+    "selector": "icon-creativecloud",
+    "file": "CreativeCloud.svg"
+  },
+  {
+    "selector": "icon-crop",
+    "file": "Crop.svg"
+  },
+  {
+    "selector": "icon-cut",
+    "file": "Cut.svg"
+  },
+  {
+    "selector": "icon-dashboard",
+    "file": "Dashboard.svg"
+  },
+  {
+    "selector": "icon-data",
+    "file": "Data.svg"
+  },
+  {
+    "selector": "icon-dataadd",
+    "file": "DataAdd.svg"
+  },
+  {
+    "selector": "icon-dataadobe",
+    "file": "DataAdobe.svg"
+  },
+  {
+    "selector": "icon-datacheck",
+    "file": "DataCheck.svg"
+  },
+  {
+    "selector": "icon-datacorrelated",
+    "file": "DataCorrelated.svg"
+  },
+  {
+    "selector": "icon-dataedit",
+    "file": "DataEdit.svg"
+  },
+  {
+    "selector": "icon-dataunavailable",
+    "file": "DataUnavailable.svg"
+  },
+  {
+    "selector": "icon-delegate",
+    "file": "Delegate.svg"
+  },
+  {
+    "selector": "icon-delete",
+    "file": "Delete.svg"
+  },
+  {
+    "selector": "icon-demographic",
+    "file": "Demographic.svg"
+  },
+  {
+    "selector": "icon-devicedesktop",
+    "file": "DeviceDesktop.svg"
+  },
+  {
+    "selector": "icon-devicelaptop",
+    "file": "DeviceLaptop.svg"
+  },
+  {
+    "selector": "icon-devicemobile",
+    "file": "DeviceMobile.svg"
+  },
+  {
+    "selector": "icon-devicetablet",
+    "file": "DeviceTablet.svg"
+  },
+  {
+    "selector": "icon-disqus",
+    "file": "Disqus.svg"
+  },
+  {
+    "selector": "icon-download",
+    "file": "Download.svg"
+  },
+  {
+    "selector": "icon-draft",
+    "file": "Draft.svg"
+  },
+  {
+    "selector": "icon-dropdown",
+    "file": "Dropdown.svg"
+  },
+  {
+    "selector": "icon-duplicate",
+    "file": "Duplicate.svg"
+  },
+  {
+    "selector": "icon-edit",
+    "file": "Edit.svg"
+  },
+  {
+    "selector": "icon-education",
+    "file": "Education.svg"
+  },
+  {
+    "selector": "icon-effects",
+    "file": "Effects.svg"
+  },
+  {
+    "selector": "icon-email",
+    "file": "Email.svg"
+  },
+  {
+    "selector": "icon-emailcancel",
+    "file": "EmailCancel.svg"
+  },
+  {
+    "selector": "icon-emailschedule",
+    "file": "EmailSchedule.svg"
+  },
+  {
+    "selector": "icon-event",
+    "file": "Event.svg"
+  },
+  {
+    "selector": "icon-eventexclude",
+    "file": "EventExclude.svg"
+  },
+  {
+    "selector": "icon-exclude",
+    "file": "Exclude.svg"
+  },
+  {
+    "selector": "icon-facebook",
+    "file": "Facebook.svg"
+  },
+  {
+    "selector": "icon-facebookcoverimage",
+    "file": "FacebookCoverImage.svg"
+  },
+  {
+    "selector": "icon-fastforward-circle",
+    "file": "FastForward-Circle.svg"
+  },
+  {
+    "selector": "icon-feedadd",
+    "file": "FeedAdd.svg"
+  },
+  {
+    "selector": "icon-feedmanagement",
+    "file": "FeedManagement.svg"
+  },
+  {
+    "selector": "icon-file",
+    "file": "File.svg"
+  },
+  {
+    "selector": "icon-filecsv",
+    "file": "FileCSV.svg"
+  },
+  {
+    "selector": "icon-fileexcel",
+    "file": "FileExcel.svg"
+  },
+  {
+    "selector": "icon-filehtml",
+    "file": "FileHTML.svg"
+  },
+  {
+    "selector": "icon-filemobile",
+    "file": "FileMobile.svg"
+  },
+  {
+    "selector": "icon-filepdf",
+    "file": "FilePDF.svg"
+  },
+  {
+    "selector": "icon-filesinglewebpage",
+    "file": "FileSingleWebPage.svg"
+  },
+  {
+    "selector": "icon-filetxt",
+    "file": "FileTxt.svg"
+  },
+  {
+    "selector": "icon-fileword",
+    "file": "FileWord.svg"
+  },
+  {
+    "selector": "icon-filexml",
+    "file": "FileXML.svg"
+  },
+  {
+    "selector": "icon-film",
+    "file": "Film.svg"
+  },
+  {
+    "selector": "icon-filter",
+    "file": "Filter.svg"
+  },
+  {
+    "selector": "icon-filteradd",
+    "file": "FilterAdd.svg"
+  },
+  {
+    "selector": "icon-filtercheck",
+    "file": "FilterCheck.svg"
+  },
+  {
+    "selector": "icon-filterdelete",
+    "file": "FilterDelete.svg"
+  },
+  {
+    "selector": "icon-filteredit",
+    "file": "FilterEdit.svg"
+  },
+  {
+    "selector": "icon-filterheart",
+    "file": "FilterHeart.svg"
+  },
+  {
+    "selector": "icon-filterremove",
+    "file": "FilterRemove.svg"
+  },
+  {
+    "selector": "icon-filterstar",
+    "file": "FilterStar.svg"
+  },
+  {
+    "selector": "icon-findandreplace",
+    "file": "FindAndReplace.svg"
+  },
+  {
+    "selector": "icon-flag",
+    "file": "Flag.svg"
+  },
+  {
+    "selector": "icon-flickr",
+    "file": "Flickr.svg"
+  },
+  {
+    "selector": "icon-folder",
+    "file": "Folder.svg"
+  },
+  {
+    "selector": "icon-folderadd",
+    "file": "FolderAdd.svg"
+  },
+  {
+    "selector": "icon-folderdefault",
+    "file": "FolderDefault.svg"
+  },
+  {
+    "selector": "icon-folderdelete",
+    "file": "FolderDelete.svg"
+  },
+  {
+    "selector": "icon-folderlocked",
+    "file": "FolderLocked.svg"
+  },
+  {
+    "selector": "icon-folderlockeddefault",
+    "file": "FolderLockedDefault.svg"
+  },
+  {
+    "selector": "icon-follow",
+    "file": "Follow.svg"
+  },
+  {
+    "selector": "icon-followoff",
+    "file": "FollowOff.svg"
+  },
+  {
+    "selector": "icon-forplacementonly",
+    "file": "ForPlacementOnly.svg"
+  },
+  {
+    "selector": "icon-forecast",
+    "file": "Forecast.svg"
+  },
+  {
+    "selector": "icon-fullscreen",
+    "file": "FullScreen.svg"
+  },
+  {
+    "selector": "icon-fullscreenexit",
+    "file": "FullScreenExit.svg"
+  },
+  {
+    "selector": "icon-gear",
+    "file": "Gear.svg"
+  },
+  {
+    "selector": "icon-gift",
+    "file": "Gift.svg"
+  },
+  {
+    "selector": "icon-globe",
+    "file": "Globe.svg"
+  },
+  {
+    "selector": "icon-globeenter",
+    "file": "GlobeEnter.svg"
+  },
+  {
+    "selector": "icon-globeexit",
+    "file": "GlobeExit.svg"
+  },
+  {
+    "selector": "icon-googleplus",
+    "file": "GooglePlus.svg"
+  },
+  {
+    "selector": "icon-googleplus1",
+    "file": "GooglePlus1.svg"
+  },
+  {
+    "selector": "icon-grapharea",
+    "file": "GraphArea.svg"
+  },
+  {
+    "selector": "icon-graphareastacked",
+    "file": "GraphAreaStacked.svg"
+  },
+  {
+    "selector": "icon-graphbarhorizontal",
+    "file": "GraphBarHorizontal.svg"
+  },
+  {
+    "selector": "icon-graphbarstackedhorizontal",
+    "file": "GraphBarStackedHorizontal.svg"
+  },
+  {
+    "selector": "icon-graphbarstackedvertical",
+    "file": "GraphBarStackedVertical.svg"
+  },
+  {
+    "selector": "icon-graphbarvertical",
+    "file": "GraphBarVertical.svg"
+  },
+  {
+    "selector": "icon-graphbubble",
+    "file": "GraphBubble.svg"
+  },
+  {
+    "selector": "icon-graphdonut",
+    "file": "GraphDonut.svg"
+  },
+  {
+    "selector": "icon-graphhistogram",
+    "file": "GraphHistogram.svg"
+  },
+  {
+    "selector": "icon-graphpie",
+    "file": "GraphPie.svg"
+  },
+  {
+    "selector": "icon-graphscatter",
+    "file": "GraphScatter.svg"
+  },
+  {
+    "selector": "icon-graphtrend",
+    "file": "GraphTrend.svg"
+  },
+  {
+    "selector": "icon-graphtrendrounded",
+    "file": "GraphTrendRounded.svg"
+  },
+  {
+    "selector": "icon-hammer",
+    "file": "Hammer.svg"
+  },
+  {
+    "selector": "icon-heart",
+    "file": "Heart.svg"
+  },
+  {
+    "selector": "icon-help-circle",
+    "file": "Help-Circle.svg"
+  },
+  {
+    "selector": "icon-home",
+    "file": "Home.svg"
+  },
+  {
+    "selector": "icon-image",
+    "file": "Image.svg"
+  },
+  {
+    "selector": "icon-imagealbum",
+    "file": "ImageAlbum.svg"
+  },
+  {
+    "selector": "icon-imagemap",
+    "file": "ImageMap.svg"
+  },
+  {
+    "selector": "icon-imageprofile",
+    "file": "ImageProfile.svg"
+  },
+  {
+    "selector": "icon-info-circle",
+    "file": "Info-Circle.svg"
+  },
+  {
+    "selector": "icon-key",
+    "file": "Key.svg"
+  },
+  {
+    "selector": "icon-launch",
+    "file": "Launch.svg"
+  },
+  {
+    "selector": "icon-layers",
+    "file": "Layers.svg"
+  },
+  {
+    "selector": "icon-layersbackward",
+    "file": "LayersBackward.svg"
+  },
+  {
+    "selector": "icon-layersbringtofront",
+    "file": "LayersBringToFront.svg"
+  },
+  {
+    "selector": "icon-layersforward",
+    "file": "LayersForward.svg"
+  },
+  {
+    "selector": "icon-layerssendtoback",
+    "file": "LayersSendToBack.svg"
+  },
+  {
+    "selector": "icon-lightbulb",
+    "file": "Lightbulb.svg"
+  },
+  {
+    "selector": "icon-link",
+    "file": "Link.svg"
+  },
+  {
+    "selector": "icon-linkcheck",
+    "file": "LinkCheck.svg"
+  },
+  {
+    "selector": "icon-linkoff",
+    "file": "LinkOff.svg"
+  },
+  {
+    "selector": "icon-location",
+    "file": "Location.svg"
+  },
+  {
+    "selector": "icon-lockoff",
+    "file": "LockOff.svg"
+  },
+  {
+    "selector": "icon-lockon",
+    "file": "LockOn.svg"
+  },
+  {
+    "selector": "icon-login",
+    "file": "Login.svg"
+  },
+  {
+    "selector": "icon-merge",
+    "file": "Merge.svg"
+  },
+  {
+    "selector": "icon-minus-circle",
+    "file": "Minus-Circle.svg"
+  },
+  {
+    "selector": "icon-minus",
+    "file": "Minus.svg"
+  },
+  {
+    "selector": "icon-more",
+    "file": "More.svg"
+  },
+  {
+    "selector": "icon-move",
+    "file": "Move.svg"
+  },
+  {
+    "selector": "icon-navigation",
+    "file": "Navigation.svg"
+  },
+  {
+    "selector": "icon-news",
+    "file": "News.svg"
+  },
+  {
+    "selector": "icon-note",
+    "file": "Note.svg"
+  },
+  {
+    "selector": "icon-noteadd",
+    "file": "NoteAdd.svg"
+  },
+  {
+    "selector": "icon-open",
+    "file": "Open.svg"
+  },
+  {
+    "selector": "icon-openrecent",
+    "file": "OpenRecent.svg"
+  },
+  {
+    "selector": "icon-organize",
+    "file": "Organize.svg"
+  },
+  {
+    "selector": "icon-page",
+    "file": "Page.svg"
+  },
+  {
+    "selector": "icon-pageexclude",
+    "file": "PageExclude.svg"
+  },
+  {
+    "selector": "icon-pages",
+    "file": "Pages.svg"
+  },
+  {
+    "selector": "icon-pagesexclude",
+    "file": "PagesExclude.svg"
+  },
+  {
+    "selector": "icon-paintbucket",
+    "file": "PaintBucket.svg"
+  },
+  {
+    "selector": "icon-paste",
+    "file": "Paste.svg"
+  },
+  {
+    "selector": "icon-pastehtml",
+    "file": "PasteHTML.svg"
+  },
+  {
+    "selector": "icon-pastetext",
+    "file": "PasteText.svg"
+  },
+  {
+    "selector": "icon-pause-circle",
+    "file": "Pause-Circle.svg"
+  },
+  {
+    "selector": "icon-pending",
+    "file": "Pending.svg"
+  },
+  {
+    "selector": "icon-phonegap",
+    "file": "PhoneGap.svg"
+  },
+  {
+    "selector": "icon-pinoff",
+    "file": "PinOff.svg"
+  },
+  {
+    "selector": "icon-pinon",
+    "file": "PinOn.svg"
+  },
+  {
+    "selector": "icon-pinterest",
+    "file": "Pinterest.svg"
+  },
+  {
+    "selector": "icon-pivot",
+    "file": "Pivot.svg"
+  },
+  {
+    "selector": "icon-play-circle",
+    "file": "Play-Circle.svg"
+  },
+  {
+    "selector": "icon-preview",
+    "file": "Preview.svg"
+  },
+  {
+    "selector": "icon-print",
+    "file": "Print.svg"
+  },
+  {
+    "selector": "icon-project",
+    "file": "Project.svg"
+  },
+  {
+    "selector": "icon-projectadd",
+    "file": "ProjectAdd.svg"
+  },
+  {
+    "selector": "icon-promote",
+    "file": "Promote.svg"
+  },
+  {
+    "selector": "icon-properties",
+    "file": "Properties.svg"
+  },
+  {
+    "selector": "icon-public",
+    "file": "Public.svg"
+  },
+  {
+    "selector": "icon-question",
+    "file": "Question.svg"
+  },
+  {
+    "selector": "icon-rss",
+    "file": "RSS.svg"
+  },
+  {
+    "selector": "icon-railrightclose",
+    "file": "RailRightClose.svg"
+  },
+  {
+    "selector": "icon-railrightopen",
+    "file": "RailRightOpen.svg"
+  },
+  {
+    "selector": "icon-redo",
+    "file": "Redo.svg"
+  },
+  {
+    "selector": "icon-reflecthorizontal",
+    "file": "ReflectHorizontal.svg"
+  },
+  {
+    "selector": "icon-reflectvertical",
+    "file": "ReflectVertical.svg"
+  },
+  {
+    "selector": "icon-refresh",
+    "file": "Refresh.svg"
+  },
+  {
+    "selector": "icon-reorder",
+    "file": "Reorder.svg"
+  },
+  {
+    "selector": "icon-replies",
+    "file": "Replies.svg"
+  },
+  {
+    "selector": "icon-reply",
+    "file": "Reply.svg"
+  },
+  {
+    "selector": "icon-report",
+    "file": "Report.svg"
+  },
+  {
+    "selector": "icon-reportadd",
+    "file": "ReportAdd.svg"
+  },
+  {
+    "selector": "icon-retweet",
+    "file": "Retweet.svg"
+  },
+  {
+    "selector": "icon-revert",
+    "file": "Revert.svg"
+  },
+  {
+    "selector": "icon-rewind-circle",
+    "file": "Rewind-Circle.svg"
+  },
+  {
+    "selector": "icon-ribbon",
+    "file": "Ribbon.svg"
+  },
+  {
+    "selector": "icon-rotateleft",
+    "file": "RotateLeft.svg"
+  },
+  {
+    "selector": "icon-rotateright",
+    "file": "RotateRight.svg"
+  },
+  {
+    "selector": "icon-search",
+    "file": "Search.svg"
+  },
+  {
+    "selector": "icon-select",
+    "file": "Select.svg"
+  },
+  {
+    "selector": "icon-sentimentnegative",
+    "file": "SentimentNegative.svg"
+  },
+  {
+    "selector": "icon-sentimentneutral",
+    "file": "SentimentNeutral.svg"
+  },
+  {
+    "selector": "icon-sentimentpositive",
+    "file": "SentimentPositive.svg"
+  },
+  {
+    "selector": "icon-servers",
+    "file": "Servers.svg"
+  },
+  {
+    "selector": "icon-share",
+    "file": "Share.svg"
+  },
+  {
+    "selector": "icon-sharpen",
+    "file": "Sharpen.svg"
+  },
+  {
+    "selector": "icon-shoppingcart",
+    "file": "ShoppingCart.svg"
+  },
+  {
+    "selector": "icon-spam",
+    "file": "Spam.svg"
+  },
+  {
+    "selector": "icon-spellcheck",
+    "file": "Spellcheck.svg"
+  },
+  {
+    "selector": "icon-star",
+    "file": "Star.svg"
+  },
+  {
+    "selector": "icon-stopwatch",
+    "file": "Stopwatch.svg"
+  },
+  {
+    "selector": "icon-subscribe",
+    "file": "Subscribe.svg"
+  },
+  {
+    "selector": "icon-successmetric",
+    "file": "SuccessMetric.svg"
+  },
+  {
+    "selector": "icon-switch",
+    "file": "Switch.svg"
+  },
+  {
+    "selector": "icon-sync",
+    "file": "Sync.svg"
+  },
+  {
+    "selector": "icon-table",
+    "file": "Table.svg"
+  },
+  {
+    "selector": "icon-tableandchart",
+    "file": "TableAndChart.svg"
+  },
+  {
+    "selector": "icon-tableedit",
+    "file": "TableEdit.svg"
+  },
+  {
+    "selector": "icon-tablehistogram",
+    "file": "TableHistogram.svg"
+  },
+  {
+    "selector": "icon-tag",
+    "file": "Tag.svg"
+  },
+  {
+    "selector": "icon-tagexclude",
+    "file": "TagExclude.svg"
+  },
+  {
+    "selector": "icon-target",
+    "file": "Target.svg"
+  },
+  {
+    "selector": "icon-targeted",
+    "file": "Targeted.svg"
+  },
+  {
+    "selector": "icon-text",
+    "file": "Text.svg"
+  },
+  {
+    "selector": "icon-textbold",
+    "file": "TextBold.svg"
+  },
+  {
+    "selector": "icon-textbulleted",
+    "file": "TextBulleted.svg"
+  },
+  {
+    "selector": "icon-textcenter",
+    "file": "TextCenter.svg"
+  },
+  {
+    "selector": "icon-textcolor",
+    "file": "TextColor.svg"
+  },
+  {
+    "selector": "icon-textindentdecrease",
+    "file": "TextIndentDecrease.svg"
+  },
+  {
+    "selector": "icon-textindentincrease",
+    "file": "TextIndentIncrease.svg"
+  },
+  {
+    "selector": "icon-textitalic",
+    "file": "TextItalic.svg"
+  },
+  {
+    "selector": "icon-textjustified",
+    "file": "TextJustified.svg"
+  },
+  {
+    "selector": "icon-textleft",
+    "file": "TextLeft.svg"
+  },
+  {
+    "selector": "icon-textnumbered",
+    "file": "TextNumbered.svg"
+  },
+  {
+    "selector": "icon-textparagraph",
+    "file": "TextParagraph.svg"
+  },
+  {
+    "selector": "icon-textright",
+    "file": "TextRight.svg"
+  },
+  {
+    "selector": "icon-textstyle",
+    "file": "TextStyle.svg"
+  },
+  {
+    "selector": "icon-textsubscript",
+    "file": "TextSubscript.svg"
+  },
+  {
+    "selector": "icon-textsuperscript",
+    "file": "TextSuperscript.svg"
+  },
+  {
+    "selector": "icon-textunderline",
+    "file": "TextUnderline.svg"
+  },
+  {
+    "selector": "icon-thumbdown",
+    "file": "ThumbDown.svg"
+  },
+  {
+    "selector": "icon-thumbup",
+    "file": "ThumbUp.svg"
+  },
+  {
+    "selector": "icon-transparency",
+    "file": "Transparency.svg"
+  },
+  {
+    "selector": "icon-treecollapse",
+    "file": "TreeCollapse.svg"
+  },
+  {
+    "selector": "icon-treecollapseall",
+    "file": "TreeCollapseAll.svg"
+  },
+  {
+    "selector": "icon-treeexpand",
+    "file": "TreeExpand.svg"
+  },
+  {
+    "selector": "icon-treeexpandall",
+    "file": "TreeExpandAll.svg"
+  },
+  {
+    "selector": "icon-trendinspect",
+    "file": "TrendInspect.svg"
+  },
+  {
+    "selector": "icon-trophy",
+    "file": "Trophy.svg"
+  },
+  {
+    "selector": "icon-tumblr",
+    "file": "Tumblr.svg"
+  },
+  {
+    "selector": "icon-twitter",
+    "file": "Twitter.svg"
+  },
+  {
+    "selector": "icon-usa",
+    "file": "USA.svg"
+  },
+  {
+    "selector": "icon-undo",
+    "file": "Undo.svg"
+  },
+  {
+    "selector": "icon-unmerge",
+    "file": "Unmerge.svg"
+  },
+  {
+    "selector": "icon-unpublish",
+    "file": "Unpublish.svg"
+  },
+  {
+    "selector": "icon-upload",
+    "file": "Upload.svg"
+  },
+  {
+    "selector": "icon-user",
+    "file": "User.svg"
+  },
+  {
+    "selector": "icon-userexclude",
+    "file": "UserExclude.svg"
+  },
+  {
+    "selector": "icon-users",
+    "file": "Users.svg"
+  },
+  {
+    "selector": "icon-usersexclude",
+    "file": "UsersExclude.svg"
+  },
+  {
+    "selector": "icon-viewalltags",
+    "file": "ViewAllTags.svg"
+  },
+  {
+    "selector": "icon-viewcard",
+    "file": "ViewCard.svg"
+  },
+  {
+    "selector": "icon-viewcolumn",
+    "file": "ViewColumn.svg"
+  },
+  {
+    "selector": "icon-viewday",
+    "file": "ViewDay.svg"
+  },
+  {
+    "selector": "icon-viewdetail",
+    "file": "ViewDetail.svg"
+  },
+  {
+    "selector": "icon-viewgrid",
+    "file": "ViewGrid.svg"
+  },
+  {
+    "selector": "icon-viewlist",
+    "file": "ViewList.svg"
+  },
+  {
+    "selector": "icon-viewoff",
+    "file": "ViewOff.svg"
+  },
+  {
+    "selector": "icon-viewon",
+    "file": "ViewOn.svg"
+  },
+  {
+    "selector": "icon-viewsingle",
+    "file": "ViewSingle.svg"
+  },
+  {
+    "selector": "icon-viewweek",
+    "file": "ViewWeek.svg"
+  },
+  {
+    "selector": "icon-viewedmarkas",
+    "file": "ViewedMarkAs.svg"
+  },
+  {
+    "selector": "icon-windows7",
+    "file": "Windows7.svg"
+  },
+  {
+    "selector": "icon-windows8",
+    "file": "Windows8.svg"
+  },
+  {
+    "selector": "icon-wordpress",
+    "file": "Wordpress.svg"
+  },
+  {
+    "selector": "icon-wrench",
+    "file": "Wrench.svg"
+  },
+  {
+    "selector": "icon-youtube",
+    "file": "YouTube.svg"
+  },
+  {
+    "selector": "icon-zoomin",
+    "file": "ZoomIn.svg"
+  },
+  {
+    "selector": "icon-zoomout",
+    "file": "ZoomOut.svg"
+  }
+]

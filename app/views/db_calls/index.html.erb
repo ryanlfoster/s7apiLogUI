@@ -1,0 +1,35 @@
+<h1>Listing db_calls</h1>
+
+<table>
+  <tr>
+    <th>statsQueried</th>
+    <th>indVars</th>
+    <th>pipelineTask</th>
+    <th>selectedDisplays</th>
+    <th>startDate</th>
+    <th>endDate</th>
+    <th>dateGroup</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @db_calls.each do |db_call| %>
+  <tr>
+    <td><%= db_call.statsQueried %></td>
+    <td><%= db_call.indVars %></td>
+    <td><%= db_call.pipelineTask %></td>
+    <td><%= db_call.selectedDisplays %></td>
+    <td><%= db_call.startDate %></td>
+    <td><%= db_call.endDate %></td>
+    <td><%= db_call.dateGroup %></td>
+
+    <td><%= link_to 'Edit', edit_db_call_path(db_call) %></td>
+    <td><%= link_to 'Destroy', db_call, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Db call', new_db_call_path %>

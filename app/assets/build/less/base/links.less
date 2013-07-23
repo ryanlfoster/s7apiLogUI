@@ -1,0 +1,25 @@
+/**
+  Element: a
+  Default colors for anchor tags
+*/
+a {
+  color: @link-color;
+
+  text-decoration: none;
+
+  &:hover {
+   text-decoration: underline;
+  }
+  
+  &:focus {
+    // Remove outline
+    outline: none;
+    outline-offset: 0;
+    
+    text-decoration: underline;
+  }
+
+  &.disabled {
+    opacity: 0.15;
+  }
+}

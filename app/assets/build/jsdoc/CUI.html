@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Namespace: CUI</title>
+    
+    <link type="text/css" rel="stylesheet" href="../css/cui.css">
+    <link type="text/css" rel="stylesheet" href="../css/guide.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+    <link type="text/css" rel="stylesheet" href="../js/google-code-prettify/prettify.css">
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script src="../js/libs/handlebars.js"></script>
+    <script src="../js/libs/jquery.js"></script>
+    <script src="../js/libs/toe.js"></script>
+    <script src="../js/libs/jquery-fingerpointer.js"></script>
+    <script src="../js/libs/jquery-gridlayout.js"></script>
+    <script src="../js/libs/jquery-reflow.js"></script>
+    <script src="../js/CUI.js"></script>
+</head>
+
+<body>
+
+
+  <header class="top">
+
+    <div class="logo"><img src="../images/theme/cloudui.png"></div>
+
+    <nav class="main">
+      <a href="../index.html">Guide</a>
+      <a href="index.html" class="selected">Docs</a>
+      <a href="https://git.corp.adobe.com/Coral/CoralUI/">Github</a>
+      <a href="../cui.zip">Download</a>
+    </nav>
+
+    <div class="drawer">
+      <div class="badge">Generated 5/29 at 16:51</div>
+    </div>
+
+  </header>
+
+  <div class="page">
+    <div class="rail left fixed">
+      <div class="wrap">
+        <section class="links"><h4>Classes</h4><nav><a href="Base.html">Base</a><a href="CUI.Accordion.html">Accordion</a><a href="CUI.Alert.html">Alert</a><a href="CUI.CardView.html">CardView</a><a href="CUI.CharacterCount.html">CharacterCount</a><a href="CUI.Datepicker.html">Datepicker</a><a href="CUI.DraggableList.html">DraggableList</a><a href="CUI.Dropdown.html">Dropdown</a><a href="CUI.DropdownList.html">DropdownList</a><a href="CUI.FileUpload.html">FileUpload</a><a href="CUI.Filters.html">Filters</a><a href="CUI.LabeledSlider.html">LabeledSlider</a><a href="CUI.Modal.html">Modal</a><a href="CUI.PathBrowser.html">PathBrowser</a><a href="CUI.Popover.html">Popover</a><a href="CUI.Rail.html">Rail</a><a href="CUI.rte.plugins.ControlPlugin.html">ControlPlugin</a><a href="CUI.Slider.html">Slider</a><a href="CUI.Tabs.html">Tabs</a><a href="CUI.Tooltip.html">Tooltip</a><a href="CUI.Tour.html">Tour</a><a href="CUI.Widget.html">Widget</a><a href="CUI.Wizard.html">Wizard</a></nav></section><section class="links"><h4>Namespaces</h4><nav><a href="CUI.html">CUI</a><a href="CUI.util.html">util</a><a href="CUI.util.HTTP.html">HTTP</a><a href="cui-contentloaded.html">cui-contentloaded</a></nav></section><section class="links"><h4>Global</h4><nav><a href="global.html#BLANK_IMAGE">BLANK_IMAGE</a><a href="global.html#calc">calc</a><a href="global.html#Class">Class</a><a href="global.html#construct">construct</a><a href="global.html#DragAction">DragAction</a><a href="global.html#editorKernel">editorKernel</a><a href="global.html#getClippingParent">getClippingParent</a><a href="global.html#getParameter">getParameter</a><a href="global.html#getSpace">getSpace</a><a href="global.html#popover">popover</a><a href="global.html#registerAdditionalClasses">registerAdditionalClasses</a><a href="global.html#setPosition">setPosition</a><a href="global.html#TOOLBAR_ACTIVE">TOOLBAR_ACTIVE</a><a href="global.html#TOOLBARITEM_ICON_PREFIX">TOOLBARITEM_ICON_PREFIX</a></nav></section>
+      </div>
+    </div>
+
+    <div class="content">
+        <!--<h1 class="line">Namespace: CUI</h1>-->
+        
+          
+
+
+
+<section>
+    
+<h1 class="line">CUI
+</h1>
+
+    <div class="class-description">The main CUI namespace.</div>
+
+
+
+    <h2 class="line">Code</h2>
+    <dd>
+    <h3>Change CUI options</h3>
+  <p>You can change CUI options by defining <code>CUI.options</code> before you load CUI.js</p>
+
+<pre class="prettyprint linenums jsDocExample">&lt;script type=&quot;text/javascript&quot;&gt;
+  var CUI = {
+    options: {
+      debug: false,
+      dataAPI: true
+    }
+  };
+&lt;/script&gt;
+&lt;script src=&quot;js/CUI.js&quot;&gt;&lt;/script&gt;</pre>
+
+    </dd>
+
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+    
+    
+        
+        
+        
+<dl class="details">
+    
+        
+        <h4 class="line">Properties:</h4>
+        
+        <dl>
+
+<table class="data noHover">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name">options</td>
+            
+            
+            <td class="type">
+            
+                <span class="param-type"><a href="Object.html">Object</a></span>
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">Main options for CloudUI components.
+                
+
+<table class="data noHover">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name">debug</td>
+            
+            
+            <td class="type">
+            
+                <span class="param-type">Boolean</span>
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">If true, show debug messages for all components.</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name">dataAPI</td>
+            
+            
+            <td class="type">
+            
+                <span class="param-type">Boolean</span>
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">If true, add listeners for widget data APIs.</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+            </td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name">Templates</td>
+            
+            
+            <td class="type">
+            
+                <span class="param-type"><a href="Object.html">Object</a></span>
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">Contains templates used by CUI widgets</td>
+        </tr>
+	
+	
+	</tbody>
+</table></dl>
+        
+    
+        
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>CUI.js, line 24</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+        
+        
+    
+    </div>
+    
+    
+    
+    
+    
+        <h2 class="line">Classes</h2>
+        
+        <dl>
+            <dt><a href="CUI.Accordion.html">Accordion</a></dt>
+            <dd></dd>
+        
+            <dt><a href="CUI.Accordion.html">Accordion</a></dt>
+            <dd></dd>
+        
+            <dt><a href="CUI.Alert.html">Alert</a></dt>
+            <dd></dd>
+        
+            <dt><a href="CUI.Alert.html">Alert</a></dt>
+            <dd></dd>
+        
+            <dt><a href="CUI.CardView.html">CardView</a></dt>
+            <dd></dd>
+        
+            <dt><a href="CUI.CardView.html">CardView</a></dt>
+            <dd></dd>
+        
+            <dt><a href="CUI.CharacterCount.html">CharacterCount</a></dt>
+            <dd></dd>
+        
+            <dt><a href="CUI.CharacterCount.html">CharacterCount</a></dt>
+            <dd></dd>
+        
+            <dt><a href="CUI.Datepicker.html">Datepicker</a></dt>
+            <dd></dd>
+        
+            <dt><a href="CUI.Datepicker.html">Datepicker</a></dt>
+            <dd></dd>
+        
+            <dt><a href="CUI.DraggableList.html">DraggableList</a></dt>
+            <dd></dd>
+        
+            <dt><a href="CUI.DraggableList.html">DraggableList</a></dt>
+            <dd></dd>
+        
+            <dt><a href="CUI.Dropdown.html">Dropdown</a></dt>
+            <dd></dd>
+        
+            <dt><a href="CUI.Dropdown.html">Dropdown</a></dt>
+            <dd></dd>
+        
+            <dt><a href="CUI.DropdownList.html">DropdownList</a></dt>
+            <dd></dd>
+        
+            <dt><a href="CUI.DropdownList.html">DropdownList</a></dt>
+            <dd></dd>
+        
+            <dt><a href="CUI.FileUpload.html">FileUpload</a></dt>
+            <dd></dd>
+        
+            <dt><a href="CUI.FileUpload.html">FileUpload</a></dt>
+            <dd></dd>
+        
+            <dt><a href="CUI.Filters.html">Filters</a></dt>
+            <dd></dd>
+        
+            <dt><a href="CUI.Filters.html">Filters</a></dt>
+            <dd></dd>
+        
+            <dt><a href="CUI.LabeledSlider.html">LabeledSlider</a></dt>
+            <dd></dd>
+        
+            <dt><a href="CUI.LabeledSlider.html">LabeledSlider</a></dt>
+            <dd></dd>
+        
+            <dt><a href="CUI.Modal.html">Modal</a></dt>
+            <dd></dd>
+        
+            <dt><a href="CUI.Modal.html">Modal</a></dt>
+            <dd></dd>
+        
+            <dt><a href="CUI.PathBrowser.html">PathBrowser</a></dt>
+            <dd></dd>
+        
+            <dt><a href="CUI.PathBrowser.html">PathBrowser</a></dt>
+            <dd></dd>
+        
+            <dt><a href="CUI.Popover.html">Popover</a></dt>
+            <dd></dd>
+        
+            <dt><a href="CUI.Popover.html">Popover</a></dt>
+            <dd></dd>
+        
+            <dt><a href="CUI.Rail.html">Rail</a></dt>
+            <dd></dd>
+        
+            <dt><a href="CUI.Rail.html">Rail</a></dt>
+            <dd></dd>
+        
+            <dt><a href="CUI.Slider.html">Slider</a></dt>
+            <dd></dd>
+        
+            <dt><a href="CUI.Slider.html">Slider</a></dt>
+            <dd></dd>
+        
+            <dt><a href="CUI.Tabs.html">Tabs</a></dt>
+            <dd></dd>
+        
+            <dt><a href="CUI.Tabs.html">Tabs</a></dt>
+            <dd></dd>
+        
+            <dt><a href="CUI.Tooltip.html">Tooltip</a></dt>
+            <dd></dd>
+        
+            <dt><a href="CUI.Tooltip.html">Tooltip</a></dt>
+            <dd></dd>
+        
+            <dt><a href="CUI.Tour.html">Tour</a></dt>
+            <dd></dd>
+        
+            <dt><a href="CUI.Tour.html">Tour</a></dt>
+            <dd></dd>
+        
+            <dt><a href="CUI.Widget.html">Widget</a></dt>
+            <dd></dd>
+        
+            <dt><a href="CUI.Widget.html">Widget</a></dt>
+            <dd></dd>
+        
+            <dt><a href="CUI.Wizard.html">Wizard</a></dt>
+            <dd></dd>
+        
+            <dt><a href="CUI.Wizard.html">Wizard</a></dt>
+            <dd></dd>
+        </dl>
+    
+    
+    
+        <h2 class="line">Namespaces</h2>
+        
+        <dl>
+            <dt><a href="namespaces.html#CUI.util"><a href="CUI.util.html">util</a></a></dt>
+            <dd></dd>
+        </dl>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+        
+    </div>
+  </div>
+
+  <script> prettyPrint(); </script>
+</body>
+</html>

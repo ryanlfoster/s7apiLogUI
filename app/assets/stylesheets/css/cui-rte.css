@@ -1,0 +1,303 @@
+/**
+ * CUI Configuration
+ */
+div.editable {
+  cursor: text;
+}
+div.edited {
+  background-color: #ffffff;
+}
+.rte-toolbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #4d4d4d;
+  display: none;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  z-index: 10000;
+  font-size: 0;
+  /* fixes additional space between buttons because of linefeeds */
+
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.3);
+}
+.rte-toolbar.active {
+  display: block;
+}
+.rte-toolbar .separator {
+  background-color: #343434;
+  width: 0.0625rem;
+  min-width: 0.0625rem;
+  height: 2.75rem;
+  display: inline-block;
+}
+.rte-toolbar button {
+  background-color: #454545;
+  background-image: none;
+  vertical-align: top;
+  pointer-events: auto;
+  /* reset gradient filter on IE */
+
+}
+.rte-toolbar button:before {
+  color: #b4b4b4;
+  opacity: 1;
+  font-size: medium;
+}
+.rte-toolbar button:hover:before {
+  color: #ffffff;
+}
+.rte-toolbar button:active:before {
+  color: #4097dc;
+}
+.rte-toolbar button.item {
+  min-width: 3.75rem;
+  width: 3.75rem;
+  height: 2.75rem;
+  background-color: #454545;
+  background-image: none;
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+.rte-toolbar button.selected {
+  background-color: #373737;
+  color: #ffffff;
+}
+.rte-toolbar button.disabled:before {
+  color: #b4b4b4;
+  opacity: 0.2;
+}
+.rte-toolbar button.triggered:before {
+  color: #4097dc !important;
+  opacity: 1 !important;
+}
+.rte-toolbar button.trigger {
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNyIgaGVpZ2h0PSI3IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48cG9seWdvbiBmaWxsPSIjOTA5MDkwIiBwb2ludHM9IjQsNCAwLDQgNCwwICIvPjwvc3ZnPg==') !important;
+  background-repeat: no-repeat !important;
+  background-position: 100% 100% !important;
+}
+.rte-toolbar button.trigger:before {
+  color: #b4b4b4;
+  opacity: 1;
+}
+.rte-toolbar button.trigger.multi-select.items-selected {
+  background-color: #2b2b2b;
+}
+.rte-toolbar button.trigger.multi-select.items-selected:before {
+  color: #b4b4b4;
+  opacity: 1;
+}
+.rte-toolbar button.modechanger {
+  background-color: #000000;
+}
+.rte-toolbar button,
+.rte-toolbar button:hover,
+.rte-toolbar button:active {
+  filter: none;
+}
+.rte-popover {
+  font-size: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10001;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+.rte-popover button {
+  background-color: #454545;
+  background-image: none;
+  vertical-align: top;
+  pointer-events: auto;
+  /* reset gradient filter on IE */
+
+}
+.rte-popover button:before {
+  color: #b4b4b4;
+  opacity: 1;
+  font-size: medium;
+}
+.rte-popover button:hover:before {
+  color: #ffffff;
+}
+.rte-popover button:active:before {
+  color: #4097dc;
+}
+.rte-popover button.item {
+  min-width: 3.75rem;
+  width: 3.75rem;
+  height: 2.75rem;
+  background-color: #454545;
+  background-image: none;
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+.rte-popover button.selected {
+  background-color: #373737;
+  color: #ffffff;
+}
+.rte-popover button.disabled:before {
+  color: #b4b4b4;
+  opacity: 0.2;
+}
+.rte-popover button.triggered:before {
+  color: #4097dc !important;
+  opacity: 1 !important;
+}
+.rte-popover button.trigger {
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNyIgaGVpZ2h0PSI3IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48cG9seWdvbiBmaWxsPSIjOTA5MDkwIiBwb2ludHM9IjQsNCAwLDQgNCwwICIvPjwvc3ZnPg==') !important;
+  background-repeat: no-repeat !important;
+  background-position: 100% 100% !important;
+}
+.rte-popover button.trigger:before {
+  color: #b4b4b4;
+  opacity: 1;
+}
+.rte-popover button.trigger.multi-select.items-selected {
+  background-color: #2b2b2b;
+}
+.rte-popover button.trigger.multi-select.items-selected:before {
+  color: #b4b4b4;
+  opacity: 1;
+}
+.rte-popover button.modechanger {
+  background-color: #000000;
+}
+.rte-popover button,
+.rte-popover button:hover,
+.rte-popover button:active {
+  filter: none;
+}
+.rte-dialog {
+  position: absolute;
+  background-color: #454545;
+  top: 0;
+  left: 0;
+  z-index: 10001;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  pointer-events: auto;
+  padding-left: 0.375rem;
+  padding-right: 0.375rem;
+}
+.rte-dialog div.rte-dialog-column-container {
+  display: table;
+  padding: 0.125rem;
+  font-size: 0;
+}
+.rte-dialog div.rte-dialog-column {
+  color: #c7c7c7;
+  font-weight: normal;
+  font-size: 0.875rem;
+  display: table-cell;
+  vertical-align: middle;
+  padding: 0.25rem;
+}
+.rte-dialog .pathbrowser input[type=text] {
+  margin: 0;
+}
+.rte-dialog input[type=text].dark,
+.rte-dialog input[type=password].dark,
+.rte-dialog input[type=email].dark,
+.rte-dialog input[type=url].dark,
+.rte-dialog input[type=tel].dark {
+  background-color: #404040;
+  color: #c7c7c7;
+  border-color: #2c2c2c;
+  height: 2.375rem;
+}
+.rte-dialog button.dialog-button {
+  vertical-align: top;
+  min-width: 2.375rem;
+  width: 2.375rem;
+  height: 2.375rem;
+  color: #cecece;
+  background-color: #2b2b2b;
+  background: #454545;
+  /* old browsers */
+
+  background-image: -webkit-linear-gradient(#545454 1%, #454545 99%);
+  /* WebKit */
+
+  background-image: -moz-linear-gradient(top, #545454 1%, #454545 99%);
+  /* FF3.6+ */
+
+  background-image: -o-linear-gradient(top, #545454 1%, #454545 99%);
+  /* Opera 11.10+ */
+
+  background-image: -ms-linear-gradient(top, #545454 1%, #454545 99%);
+  /* IE10+ */
+
+  background-image: linear-gradient(top, #545454 1%, #454545 99%);
+  /* W3C */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#545454', endColorstr='#454545', GradientType=0);
+  /* IE < 10 */
+
+  padding: 0;
+  border: 0.0625rem;
+  border-style: solid;
+  border-color: #1d1d1d;
+  margin: 0;
+  pointer-events: auto;
+}
+.rte-dialog button.dialog-button.selected {
+  background-color: #151515;
+  color: #d0d0d0;
+}
+.rte-dialog button.dialog-button.disabled {
+  color: #eeeeee;
+  opacity: 0.4;
+}
+.rte-dialog button.dialog-button.triggered:before {
+  color: #4097dc !important;
+}
+.rte-dialog button.dialog-button.trigger {
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNSIgaGVpZ2h0PSI1IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48cG9seWdvbiBmaWxsPSIjQ0NDQ0NDIiBwb2ludHM9IjQsNCAwLDQgNCwwICIvPjwvc3ZnPg==') !important;
+  background-repeat: no-repeat !important;
+  background-position: 100% 100% !important;
+}
+.rte-dialog button.dialog-button.white:before {
+  opacity: 1.0 !important;
+}
+.rte-dialog button.dialog-button:before {
+  text-shadow: 0 -0.0625rem 0 rgba(0, 0, 0, 0.6);
+}
+.rte-dialog button.dialog-button.primary {
+  border: 0.0625rem;
+  border-style: solid;
+  border-color: #002341;
+}
+.rte-dialog-mask {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  background-color: #ffffff;
+  opacity: 0.0;
+  pointer-events: auto;
+}
+.cui-rte-forcedborder,
+.cui-rte-forcedborder TD,
+.cui-rte-forcedborder TH {
+  border: 0.0625rem dotted #d3d3d3;
+}

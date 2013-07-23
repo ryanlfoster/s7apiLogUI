@@ -1,0 +1,278 @@
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.clearfix:after {
+  clear: both;
+}
+.hide-text {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+.input-block-level {
+  display: block;
+  width: 100%;
+  min-height: 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/**
+ * CUI Configuration
+ */
+/**
+ Mixin: .font-face
+ Quickly declare a font face
+*/
+/**
+ Mixin: .gradient
+ A simpler syntax for gradients
+*/
+/**
+ Mixin: .pinstripe
+ Print a pinstripe gradient
+*/
+/**
+ Mixin: .shadow
+ A simpler syntax for shadow with defaults
+*/
+/**
+ Mixin: .ellipsis
+ Truncate overflowed text using ellipsis: ...
+*/
+/**
+ Mixin: .scrollable
+ Make an area scrollable when the contents overflow
+
+ Note: Does not work for flexbox children in Chrome
+*/
+/**
+ Mixin: .spin
+ Rotate an element forever
+*/
+/**
+ Mixin: .background-size
+ Set the scaling of the background image or gradient
+*/
+/**
+ Mixin: .glow
+ Make an element glow
+ TODO: add partial glow mixin for mixed top/bottom/left/right only
+*/
+/**
+ Mixin: .glow-text
+ Make text or a font icon glow
+*/
+/**
+ Mixin: .no-glow
+ Make an element glow
+ TODO: add partial glow mixin for mixed top/bottom/left/right only
+*/
+/**
+ Mixin: .no-select
+ Stop text selection for an element and its children
+*/
+/**
+ Mixin: .placeholder
+ Input field placeholder font color
+*/
+/**
+ Mixin: .box-sizing
+ Set an element as a border box
+*/
+.border-box {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/**
+ Mixin: .calc-width
+ Sets the width with a calc() expression
+*/
+/*
+  Mixin: .font-size
+  Turn any button into a square button. For use with the .icon-* mixins or classes.
+*/
+/*
+  Mixin: .button-square
+  Turn any button into a square button. For use with the .icon-* mixins or classes.
+*/
+html {
+  overflow-y: scroll;
+}
+.wizard-page {
+  min-width: 48rem;
+}
+.wizard-page .wizard > section {
+  position: relative;
+  *zoom: 1;
+}
+.wizard-page .wizard > section:before,
+.wizard-page .wizard > section:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.wizard-page .wizard > section:after {
+  clear: both;
+}
+.wizard-page .settings {
+  width: 30rem;
+  margin: 0 auto;
+  padding-top: 3.75rem;
+}
+.wizard-page .settings .top {
+  border-bottom: 0.0625rem solid #b1b1b1;
+}
+.wizard-page .settings .bottom {
+  border-top: 0.0625rem solid #fdfdfd;
+  *zoom: 1;
+}
+.wizard-page .settings .bottom:before,
+.wizard-page .settings .bottom:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.wizard-page .settings .bottom:after {
+  clear: both;
+}
+.wizard-page .settings label {
+  font-size: 1rem;
+}
+.wizard-page .properties .card-page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 14rem;
+}
+.wizard-page .properties .tabs-wrapper {
+  min-width: 43.875rem;
+  margin-left: 15rem;
+  *zoom: 1;
+}
+.wizard-page .properties .tabs-wrapper:before,
+.wizard-page .properties .tabs-wrapper:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.wizard-page .properties .tabs-wrapper:after {
+  clear: both;
+}
+.wizard-page .properties .tabs {
+  width: 100%;
+}
+.wizard-page .properties .tabs .basic > div {
+  margin-left: 1.5rem;
+  width: 13rem;
+}
+.wizard-page .properties .tabs .basic > div > input,
+.wizard-page .properties .tabs .basic > div > label,
+.wizard-page .properties .tabs .basic > div > textarea,
+.wizard-page .properties .tabs .basic > div > .filters {
+  display: block;
+}
+.wizard-page .properties .tabs .basic > div label {
+  margin-bottom: 0.3125rem;
+}
+.wizard-page .properties .tabs .basic > div input[type="text"],
+.wizard-page .properties .tabs .basic > div textarea {
+  width: 13rem;
+}
+.wizard-page .properties .tabs .basic > div .datepicker input[type="text"] {
+  width: auto;
+}
+.wizard-page .properties .tabs .basic > div textarea {
+  height: 8.75rem;
+}
+.wizard-page .properties .tabs .basic > div:first-child {
+  margin-left: 0;
+}
+.wizard-page .select-template,
+.wizard-page .select-source {
+  margin: 0;
+}
+.wizard-page .select-template article.focused,
+.wizard-page .select-source article.focused {
+  background-color: #3687c8;
+  background-image: -webkit-gradient(radial, center center, 0, center center, 460, from(#4fa2e1), to(#3687c8));
+  background-image: -webkit-radial-gradient(circle, #4fa2e1, #3687c8);
+  background-image: -moz-radial-gradient(circle, #4fa2e1, #3687c8);
+  background-image: -o-radial-gradient(circle, #4fa2e1, #3687c8);
+  background-repeat: no-repeat;
+  /* Temporary, need SVGs icons */
+
+}
+.wizard-page .select-template article.focused h4,
+.wizard-page .select-source article.focused h4 {
+  color: #173952;
+}
+.wizard-page .select-template article.focused a,
+.wizard-page .select-source article.focused a {
+  color: #23547a;
+}
+.wizard-page .select-template article.focused .icon-wizard-edit,
+.wizard-page .select-source article.focused .icon-wizard-edit {
+  background-image: url('../images/wizard/edit-focused.png');
+}
+.wizard-page .select-template article.focused .icon-wizard-earth,
+.wizard-page .select-source article.focused .icon-wizard-earth {
+  background-image: url('../images/wizard/earth-focused.png');
+}
+.wizard-page .select-template article.focused .icon-wizard-double-right-arrow,
+.wizard-page .select-source article.focused .icon-wizard-double-right-arrow {
+  background-image: url('../images/wizard/double-right-arrow-focused.png');
+}
+.select-source .toolbar {
+  background-color: #eee;
+  -webkit-box-shadow: 0 0.09375rem 0.09375rem 0.0625rem rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 0.09375rem 0.09375rem 0.0625rem rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0.09375rem 0.09375rem 0.0625rem rgba(0, 0, 0, 0.25);
+}
+.select-source-page {
+  background: url('../images/wizard/bg-pattern.png') top left repeat;
+}
+.select-template {
+  /* Temporary, need to ask how the preview is built */
+
+}
+.select-template div.preview {
+  background: url('../images/wizard/preview.png') center top no-repeat;
+  width: 100%;
+  height: 41.5rem;
+  display: none;
+}
+.select-template div.preview.displayed {
+  display: block;
+}
+.select-template article .preview {
+  border: none;
+  background: #434749;
+  top: 8.5em;
+  left: 25%;
+  position: absolute;
+  display: none;
+}
+.select-template article.focused button.preview {
+  display: block;
+}
+.select-template .grid-container.hidden {
+  display: none;
+}
+/* Temporary, need SVGs icons */
+.icon-wizard-earth {
+  background-image: url('../images/wizard/earth.png');
+}
+/* Temporary, need SVGs icons */
+.icon-wizard-double-right-arrow {
+  background-image: url('../images/wizard/double-right-arrow.png');
+}

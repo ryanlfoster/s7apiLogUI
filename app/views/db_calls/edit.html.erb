@@ -1,0 +1,36 @@
+<div id="left">
+  <h1>Query Database</h1>
+
+  <%= render 'criteria' %>
+
+  <%= link_to 'Show', @db_call %> |
+  <%= link_to 'Back', db_calls_path %>
+</div>
+
+<div id="right">
+  <span hidden><%= selectedDisplays = Array.class_eval(@db_call.selectedDisplays) %></span>
+  <% if selectedDisplays.include? "barChart" %>
+    <span hidden><%= barChartName = "barchart-1" %></span>
+    <span hidden><%= toDisplay = barGraphData(@db_call) %></span>
+    <% toDisplay.each do |labels, graphData| %>
+      <%= render partial: "bargraph", locals: {labels: labels, graphData: graphData, barChartName: barChartName} %>
+      <% barChartName = "barchart-" + barChartName.split("-")[-1].to_i.next.to_s %>
+    <% end %>
+  <% end %>
+
+  <% if selectedDisplays.include? "pieChart" %>
+    <span hidden><%= pieChartName = "piechart1" %></span>
+    <span hidden><%= pieData = pieData(@db_call) %></span>
+    <% pieData.each do |labels, graphData| %>
+      <%= render partial: "piechart", locals: {labels: labels, graphData: graphData, pieChartName: pieChartName} %>
+      <% pieChartName = "pie-" + pieChartName.split("-")[-1].to_i.next.to_s %>
+    <% end %>
+  <% end %>
+
+  <% if selectedDisplays.include? "table" %>
+    <span hidden><%= tableName = "table1" %></span>
+    <span hidden><%= tableData = tableData(@db_call) %></span>
+      <%= render partial: "table", locals: {graphData: tableData, tableName: tableName} %>
+      <% tableName = "table" + tableName[-1].to_i.next.to_s %>
+  <% end %>
+</div>
