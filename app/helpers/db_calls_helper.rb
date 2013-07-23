@@ -180,8 +180,7 @@ module DbCallsHelper
     toReturn = {}
     p "arrayToHash"
     vars = vars.sort
-    p vars
-    vars.sort.each do |var|
+    vars.each do |var|
       toReturn[var] = toReturn.length + offset
     end
     return toReturn
