@@ -179,10 +179,12 @@ module DbCallsHelper
   def arrToHash(vars, offset = 0)
     toReturn = {}
     p "arrayToHash"
+    p vars
     vars = vars.sort
     vars.each do |var|
       toReturn[var] = toReturn.length + offset
     end
+    p "finished arrayToHash"
     return toReturn
   end
 
