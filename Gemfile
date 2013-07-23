@@ -16,6 +16,8 @@ group :assets do
   gem 'bson_ext', '1.8.2'  
   gem 'mongo', '1.8.2'
   gem 'gchartrb'
+  gem 'execjs'
+  gem 'therubyracer'
   # gem 'mongoid', '2.4.6'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
