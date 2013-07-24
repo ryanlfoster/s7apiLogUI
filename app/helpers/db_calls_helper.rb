@@ -13,8 +13,6 @@ module DbCallsHelper
     filteredLogs = filterLogs(mongoData, indVars - [varyBy], startingLabel)
     toReturn = toGoogleCForm(filteredLogs, varyBy, groupBy)
 
-    p "google data"
-    p toReturn
     return toReturn
   end
 
@@ -36,7 +34,6 @@ module DbCallsHelper
       end
     else #something is wrong with this monthly!!!
       dateRanges = genDateRanges(db_call)
-      p dateRanges
       mongoData.each do |instance|
         instance["_id"]["requestDate"] = selectDateRange(instance["_id"]["requestDate"], dateRanges)
       end
@@ -88,7 +85,6 @@ module DbCallsHelper
   def selectDateRange(date, dateRanges)
     dateRanges.each do |range|
       if date <= range[1]
-        p date
         return dateRangeToStr(range)
       end
     end
@@ -149,7 +145,6 @@ module DbCallsHelper
   end
 
   def toGoogleCForm(hashOfLogs, varyBy, groupBy)
-    p hashOfLogs
     toReturn = {}
     hashOfLogs.each do |labels, instances|
       varyByVars = allVarValues(varyBy, instances)
@@ -182,13 +177,10 @@ module DbCallsHelper
 
   def arrToHash(vars, offset = 0)
     toReturn = {}
-    p "arrayToHash"
-    p vars
     vars = vars.sort
     vars.each do |var|
       toReturn[var] = toReturn.length + offset
     end
-    p "finished arrayToHash"
     return toReturn
   end
 
