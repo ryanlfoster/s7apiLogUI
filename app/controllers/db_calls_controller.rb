@@ -81,15 +81,22 @@ class DbCallsController < ApplicationController
     selectedDisplays.push("pieChart") if params[:draw_pie]
     selectedDisplays.push("table") if params[:draw_table]
 
-    @db_call.update_attributes( :pipelineTask => genPipeline(@db_call, toDefine, toGroup, statsQueried),
-                                :indVars => indVars.to_s.html_safe,
-                                :statsQueried => statsQueried.to_s.html_safe,
-                                :selectedDisplays => selectedDisplays.to_s.html_safe,
-                                :dateGroup => params[:dateGroup].html_safe )
 
-    if @db_call.save
+
+    if indVars.empty?
+      @db_call.errors.add(:indVars, 'must specify some variables to vary by')
+    else
+      @db_call.update_attributes( :pipelineTask => genPipeline(@db_call, toDefine, toGroup, statsQueried),
+                                  :indVars => indVars.to_s.html_safe,
+                                  :statsQueried => statsQueried.to_s.html_safe,
+                                  :selectedDisplays => selectedDisplays.to_s.html_safe,
+                                  :dateGroup => params[:dateGroup].html_safe )
+    end
+
+    if (not @db_call.errors.any?) and @db_call.save
       redirect_to :action => "edit", :id => @db_call.id
     else
+      p @db_call.errors
       render 'new'
     end
     # respond_to do |format|

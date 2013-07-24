@@ -5,3 +5,9 @@
 
 	<%= link_to 'Back', db_calls_path %>
 </div>
+
+<div id="right">
+  <% if @db_call.errors.any? %>
+    <%= @db_call.errors.full_messages %>  
+  <% end %> 
+</div>

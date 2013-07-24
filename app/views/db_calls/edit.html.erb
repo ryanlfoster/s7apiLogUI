@@ -8,10 +8,16 @@
 </div>
 
 <div id="right">
+  <% if @db_call.errors.any? %>
+    <%= @db_call.errors.full_messages %>  
+  <% end %> 
   <span hidden><%= selectedDisplays = Array.class_eval(@db_call.selectedDisplays) %></span>
   <% if selectedDisplays.include? "barChart" %>
     <span hidden><%= barChartName = "barchart-1" %></span>
     <span hidden><%= toDisplay = barGraphData(@db_call) %></span>
+    <% if toDisplay.empty? %>
+      <center><h1>No mongo data fits request</h1></center>
+    <% end %>
     <% toDisplay.each do |labels, graphData| %>
       <%= render partial: "bargraph", locals: {labels: labels, graphData: graphData, barChartName: barChartName} %>
       <% barChartName = "barchart-" + barChartName.split("-")[-1].to_i.next.to_s %>

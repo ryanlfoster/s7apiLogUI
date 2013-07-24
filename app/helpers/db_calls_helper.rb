@@ -1,11 +1,12 @@
 module DbCallsHelper
 
   def barGraphData(db_call, groupBy = "requestDate")
+    mongoData = aggregateDB(db_call)
+    if mongoData.empty?
+      return {}
+    end
     indVars = Array.class_eval(db_call.indVars)
     statsToShow = Array.class_eval(db_call.statsQueried)
-    mongoData = aggregateDB(db_call)
-    p "mongo data"
-    p mongoData
     dateGroupedData = dateGroupData(mongoData, db_call)
     varyBy = mostVaried(mongoData, indVars) # variable with most possible values
     startingLabel = genStartingLabel(mongoData[0]["_id"].keys - indVars - [groupBy], mongoData[0]["_id"])  # clean this
@@ -33,8 +34,9 @@ module DbCallsHelper
       mongoData.each do |instance|
         instance["_id"]["requestDate"] = instance["_id"]["requestDate"].to_s.split(" ")[0]
       end
-    else
+    else #something is wrong with this monthly!!!
       dateRanges = genDateRanges(db_call)
+      p dateRanges
       mongoData.each do |instance|
         instance["_id"]["requestDate"] = selectDateRange(instance["_id"]["requestDate"], dateRanges)
       end
@@ -85,7 +87,8 @@ module DbCallsHelper
 
   def selectDateRange(date, dateRanges)
     dateRanges.each do |range|
-      if date < range[1]
+      if date <= range[1]
+        p date
         return dateRangeToStr(range)
       end
     end
@@ -146,6 +149,7 @@ module DbCallsHelper
   end
 
   def toGoogleCForm(hashOfLogs, varyBy, groupBy)
+    p hashOfLogs
     toReturn = {}
     hashOfLogs.each do |labels, instances|
       varyByVars = allVarValues(varyBy, instances)
@@ -198,9 +202,12 @@ module DbCallsHelper
   end
 
   def tableData(db_call, groupBy = "requestDate")
+    mongoData = aggregateDB(db_call)
+    if mongoData.empty?
+      return []
+    end
     indVars = Array.class_eval(db_call.indVars) + [groupBy]
     statsToShow = Array.class_eval(db_call.statsQueried)
-    mongoData = aggregateDB(db_call)
     varyBy = mostVaried(mongoData, indVars)
     indVars = [varyBy] + (indVars - [varyBy])
     labels = indVars + statsToShow
@@ -220,9 +227,12 @@ module DbCallsHelper
   end
 
   def pieData(db_call, groupBy = "requestDate")
+    mongoData = aggregateDB(db_call)
+    if mongoData.empty?
+      return {}
+    end
     indVars = Array.class_eval(db_call.indVars)
     statsToShow = Array.class_eval(db_call.statsQueried)
-    mongoData = aggregateDB(db_call)
     varyBy = mostVaried(mongoData, indVars)
     toReturn = {}
     statsToShow.each do |stat|
@@ -241,7 +251,7 @@ module DbCallsHelper
   end
 
   def aggregateDB(db_call)
-    client = MongoClient.new('localhost', 27017)
+    client = MongoClient.new('localhost', 27017, :pool_size => 10, :pool_timeout => 15)
     db     = client['s7db']
     coll   = db['apiLog']
 
@@ -251,11 +261,7 @@ module DbCallsHelper
     aggOutput = coll.aggregate(dateMatchQuery + Array.class_eval(db_call.pipelineTask))
     
     # verifies that query returns data
-    if aggOutput.empty?
-     raise "no data"
-    else
-     return aggOutput
-    end
+    return aggOutput
   end
 
   def toUTC(date)
