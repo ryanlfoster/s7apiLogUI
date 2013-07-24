@@ -285,7 +285,6 @@ module DbCallsHelper
   end
 
   def createLabel(labels)
-    # toReturn = labels[0] + " by " + labels[1] + " for " + labels[2..-1].join(" ")
     toReturn = labels.join(" ")
     return toReturn 
   end

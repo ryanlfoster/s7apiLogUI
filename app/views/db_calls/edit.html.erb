@@ -14,11 +14,11 @@
   <span hidden><%= selectedDisplays = Array.class_eval(@db_call.selectedDisplays) %></span>
   <% if selectedDisplays.include? "barChart" %>
     <span hidden><%= barChartName = "barchart-1" %></span>
-    <span hidden><%= toDisplay = barGraphData(@db_call) %></span>
-    <% if toDisplay.empty? %>
-      <center><h1>No mongo data fits request</h1></center>
+    <span hidden><%= barData = barGraphData(@db_call) %></span>
+    <% if barData.empty? %>
+      <center><h1>No mongo data fits request for bar chart</h1></center>
     <% end %>
-    <% toDisplay.each do |labels, graphData| %>
+    <% barData.each do |labels, graphData| %>
       <%= render partial: "bargraph", locals: {labels: labels, graphData: graphData, barChartName: barChartName} %>
       <% barChartName = "barchart-" + barChartName.split("-")[-1].to_i.next.to_s %>
     <% end %>
@@ -27,6 +27,9 @@
   <% if selectedDisplays.include? "pieChart" %>
     <span hidden><%= pieChartName = "piechart1" %></span>
     <span hidden><%= pieData = pieData(@db_call) %></span>
+    <% if pieData.empty? %>
+      <center><h1>No mongo data fits request for pie chart</h1></center>
+    <% end %>
     <% pieData.each do |labels, graphData| %>
       <%= render partial: "piechart", locals: {labels: labels, graphData: graphData, pieChartName: pieChartName} %>
       <% pieChartName = "pie-" + pieChartName.split("-")[-1].to_i.next.to_s %>
@@ -36,7 +39,10 @@
   <% if selectedDisplays.include? "table" %>
     <span hidden><%= tableName = "table1" %></span>
     <span hidden><%= tableData = tableData(@db_call) %></span>
-      <%= render partial: "table", locals: {graphData: tableData, tableName: tableName} %>
-      <% tableName = "table" + tableName[-1].to_i.next.to_s %>
+    <% if tableData.empty? %>
+      <center><h1>No mongo data fits request for table</h1></center>
+    <% end %>
+    <%= render partial: "table", locals: {graphData: tableData, tableName: tableName} %>
+    <% tableName = "table" + tableName[-1].to_i.next.to_s %>
   <% end %>
 </div>
