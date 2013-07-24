@@ -1,13 +1,10 @@
 module DbCallsHelper
 
   def barGraphData(db_call, groupBy = "requestDate")
-    mongoData = aggregateDB(db_call)
+    mongoData, indVars, statsToShow, varyBy = initDataVars(db_call)
     if mongoData.empty?
       return {}
     end
-    indVars = Array.class_eval(db_call.indVars)
-    statsToShow = Array.class_eval(db_call.statsQueried)
-    dateGroupedData = dateGroupData(mongoData, db_call)
     varyBy = mostVaried(mongoData, indVars) # variable with most possible values
     startingLabel = genStartingLabel(mongoData[0]["_id"].keys - indVars - [groupBy], mongoData[0]["_id"])  # clean this
     filteredLogs = filterLogs(mongoData, indVars - [varyBy], startingLabel)
@@ -194,13 +191,11 @@ module DbCallsHelper
   end
 
   def tableData(db_call, groupBy = "requestDate")
-    mongoData = aggregateDB(db_call)
+    mongoData, indVars, statsToShow, varyBy = initDataVars(db_call)
     if mongoData.empty?
       return []
     end
-    indVars = Array.class_eval(db_call.indVars) + [groupBy]
-    statsToShow = Array.class_eval(db_call.statsQueried)
-    varyBy = mostVaried(mongoData, indVars)
+    indVars += [groupBy]
     indVars = [varyBy] + (indVars - [varyBy])
     labels = indVars + statsToShow
     toReturn = [labels]
@@ -219,13 +214,10 @@ module DbCallsHelper
   end
 
   def pieData(db_call, groupBy = "requestDate")
-    mongoData = aggregateDB(db_call)
+    mongoData, indVars, statsToShow, varyBy = initDataVars(db_call)
     if mongoData.empty?
       return {}
     end
-    indVars = Array.class_eval(db_call.indVars)
-    statsToShow = Array.class_eval(db_call.statsQueried)
-    varyBy = mostVaried(mongoData, indVars)
     toReturn = {}
     statsToShow.each do |stat|
       labels = [varyBy] + [stat]
@@ -263,7 +255,7 @@ module DbCallsHelper
   def toCheck(db_call, toFind)
     if db_call.nil? or db_call.pipelineTask.nil?
       return false
-    elsif db_call.pipelineTask.include? '"'+toFind+'"' or db_call.pipelineTask.include? '"$'+toFind+'"'
+    elsif db_call.pipelineTask.include? '"' + toFind + '"' or db_call.pipelineTask.include? '"$'+toFind+'"'
       return true
     elsif db_call.selectedDisplays.include? toFind
       return true
@@ -288,4 +280,16 @@ module DbCallsHelper
     toReturn = labels.join(" ")
     return toReturn 
   end
+
+  def initDataVars(db_call)
+    mongoData = aggregateDB(db_call)
+    if mongoData.empty?
+      return [], [], [], []
+    end
+    indVars = Array.class_eval(db_call.indVars)
+    statsToShow = Array.class_eval(db_call.statsQueried)
+    varyBy = mostVaried(mongoData, indVars)
+    return mongoData, indVars, statsToShow, varyBy
+  end
+
 end
