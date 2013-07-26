@@ -35,13 +35,15 @@ module DbCallsHelper
       mongoData.each do |instance|
         instance["_id"]["requestDate"] = instance["_id"]["requestDate"].to_s.split(" ")[0]
       end
-    else #something is wrong with this monthly!!!
+      return mongoData
+    else 
       dateRanges = genDateRanges(db_call)
       mongoData.each do |instance|
         instance["_id"]["requestDate"] = selectDateRange(instance["_id"]["requestDate"], dateRanges)
       end
       mongoData = accumulateStats(mongoData)
     end
+    p mongoData
     return mongoData.values
   end
 
@@ -94,6 +96,8 @@ module DbCallsHelper
       return 7
     elsif dateGroup == "monthly"
       return 30
+    elsif dateGroup == "aggregate"
+      return 2000
     end
     raise "invalid dateGroup"
   end
@@ -214,6 +218,7 @@ module DbCallsHelper
     if mongoData.empty?
       return []
     end
+    mongoData = dateGroupData(mongoData, db_call)
     indVars += [groupBy]
     indVars = [varyBy] + (indVars - [varyBy])
     labels = indVars + statsToShow

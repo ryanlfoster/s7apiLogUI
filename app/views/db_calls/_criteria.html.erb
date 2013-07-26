@@ -49,6 +49,10 @@
           <input id="dateGroup_monthly" name="dateGroup" type="radio" value="monthly" <%= 'checked' if @db_call.dateGroup == "monthly"-%>>
           <span> Monthly </span>
         </label>
+        <label>
+          <input id="dateGroup_aggregate" name="dateGroup" type="radio" value="aggregate" <%= 'checked' if @db_call.dateGroup == "aggregate"-%>>
+          <span> Aggregate </span>
+        </label>
       </div>
 
       <p><div class="selector">
