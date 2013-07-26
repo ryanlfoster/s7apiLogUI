@@ -9,7 +9,7 @@
 
 <div id="right">
   <% if @db_call.errors.any? %>
-    <%= @db_call.errors.full_messages %>  
+    <h1>Nothing to show because a variable to vary by must be specified</h1>  
   <% else %>
     <span hidden><%= selectedDisplays = Array.class_eval(@db_call.selectedDisplays) %></span>
     <% if selectedDisplays.include? "barChart" %>

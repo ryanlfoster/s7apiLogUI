@@ -1,11 +1,17 @@
 module DbCallsHelper
 
+  $statOp = { "numExecs" => "sum",
+              "minExecTime" => "min",
+              "maxExecTime" => "max",
+              "medExecTime" => "med",
+              "meanExecTime" => "mean" }
+
   def barGraphData(db_call, groupBy = "requestDate")
     mongoData, indVars, statsToShow, varyBy = initDataVars(db_call)
     if mongoData.empty?
       return {}
     end
-    varyBy = mostVaried(mongoData, indVars) # variable with most possible values
+    dateGroupedData = dateGroupData(mongoData, db_call)
     startingLabel = genStartingLabel(mongoData[0]["_id"].keys - indVars - [groupBy], mongoData[0]["_id"])  # clean this
     filteredLogs = filterLogs(mongoData, indVars - [varyBy], startingLabel)
     toReturn = toGoogleCForm(filteredLogs, varyBy, groupBy)
