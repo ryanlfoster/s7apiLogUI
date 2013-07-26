@@ -3,15 +3,15 @@ module DbCallsHelper
   $statOp = { "numExecs" => "sum",
               "minExecTime" => "min",
               "maxExecTime" => "max",
-              "medExecTime" => "med",
-              "meanExecTime" => "mean" }
+              "medExecTime" => "sum",
+              "meanExecTime" => "sum" }
 
   def barGraphData(db_call, groupBy = "requestDate")
     mongoData, indVars, statsToShow, varyBy = initDataVars(db_call)
     if mongoData.empty?
       return {}
     end
-    dateGroupedData = dateGroupData(mongoData, db_call)
+    mongoData = dateGroupData(mongoData, db_call)
     startingLabel = genStartingLabel(mongoData[0]["_id"].keys - indVars - [groupBy], mongoData[0]["_id"])  # clean this
     filteredLogs = filterLogs(mongoData, indVars - [varyBy], startingLabel)
     toReturn = toGoogleCForm(filteredLogs, varyBy, groupBy)
@@ -42,18 +42,31 @@ module DbCallsHelper
       end
       mongoData = accumulateStats(mongoData)
     end
-    return mongoData
+    return mongoData.values
   end
 
   def accumulateStats(mongoData)
     toReturn = {}
+    count = {}
+    stats = mongoData[0].except("_id").keys
     mongoData.each do |instance|
       if toReturn[instance["_id"]].nil?
         toReturn[instance["_id"]] = instance
-      else
-        toReturn[instance["_id"]].except("_id").keys.each do |stat|
-          toReturn[instance["_id"]][stat] += instance[stat]
+        if stats.include? "medExecTime" or stats.include? "meanExecTime"
+          count[instance["_id"]] = 1
         end
+      else
+        stats.each do |stat|
+          toReturn[instance["_id"]][stat] = updateStat(toReturn[instance["_id"]][stat], instance[stat], stat)
+        end
+        if stats.include? "medExecTime" or stats.include? "meanExecTime"
+            count[instance["_id"]] += 1
+        end
+      end
+    end
+    count.keys.each do |id|
+      (stats & ["medExecTime", "meanExecTime"]).each do |stat|
+        toReturn[id][stat] = toReturn[id][stat]/count[id]
       end
     end
     return toReturn
@@ -228,17 +241,34 @@ module DbCallsHelper
     statsToShow.each do |stat|
       labels = [varyBy] + [stat]
       newGraph = {}
+      count = {}
       mongoData.each do |instance|
         if newGraph[instance["_id"][varyBy]].nil?
           newGraph[instance["_id"][varyBy]] = instance[stat]
+          if stat == "meanExecTime" or stat == "medExecTime"
+            count[instance["_id"][varyBy]] = 1
+          end
         else
-          newGraph[instance["_id"][varyBy]] += instance[stat]
+          newGraph[instance["_id"][varyBy]] = updateStat(newGraph[instance["_id"][varyBy]], instance[stat], stat)
+          if stat == "meanExecTime" or stat == "medExecTime"
+            count[instance["_id"][varyBy]] += 1
+          end
+        end
+      end
+      if stat == "meanExecTime" or stat == "medExecTime"
+        count.keys.each do |id|
+          newGraph[id] = newGraph[id]/count[id]
         end
       end
       toReturn[labels] = [labels] + newGraph.to_a
     end
     return toReturn
   end
+
+  def updateStat(currVal, otherVal, stat, count = 1)
+    return [currVal, otherVal].send($statOp[stat])
+  end
+
 
   def aggregateDB(db_call)
     client = MongoClient.new('localhost', 27017, :pool_size => 10, :pool_timeout => 15)
