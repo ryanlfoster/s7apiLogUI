@@ -12,4 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require_tree ./js/libs
+//= require ./js/libs/moment.js
+//= require_tree ./js
+//= require_tree ./js/google-code-prettify

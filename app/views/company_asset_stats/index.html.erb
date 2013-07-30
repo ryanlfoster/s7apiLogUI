@@ -1,0 +1,28 @@
+<h1>Listing companyAssetStats queries</h1>
+
+<table>
+  <tr>
+
+    <th>Company ID(s)</th>
+    <th>Geo</th>
+    <th>assetType(s)</th>
+    <th>startTime</th>
+    <th>endTime</th>
+  </tr>
+
+<% @company_asset_stats.each do |asset_stat| %>
+  <tr>
+    <td><%= asset_stat[:companyID] %></td>
+    <td><%= asset_stat[:geo] %></td>
+    <td><%= asset_stat[:assetTye] %></td>
+    <td><%= asset_stat[:startTime] %></td>
+    <td><%= asset_stat[:endTime] %></td>
+    <td><%= link_to 'Edit', edit_company_asset_stat_path(asset_stat) %></td>
+    <td><%= link_to 'Destroy', asset_stat, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br/>
+
+<%= link_to 'New asset_stat', new_company_asset_stat_path %>

@@ -1,0 +1,51 @@
+<%= form_for @company_asset_stats, url: {action: "create"} do |f| %>
+  <p>
+    <div class="selector" name="data_centers">
+      <label><input id="company_asset_stats[geo][]" name="company_asset_stats[geo][]" type="checkbox" value="na" <%= 'checked' if @company_asset_stats[:geo] and @company_asset_stats[:geo].include? 'na' -%> >
+        <span>Dallas</span>
+      </label>
+
+      <label><input id="company_asset_stats[geo][]" name="company_asset_stats[geo][]" type="checkbox" value="emea" <%= 'checked' if @company_asset_stats[:geo] and @company_asset_stats[:geo].include? 'emea' -%>>
+        <span>Dublin</span>
+      </label>
+
+      <label><input id="company_asset_stats[geo][]" name="company_asset_stats[geo][]" type="checkbox" value="apac" <%= 'checked' if @company_asset_stats[:geo] and @company_asset_stats[:geo].include? 'apac' -%>>
+        <span>Singapore</span>
+      </label>
+    </div>
+
+    <div class="field">
+      <%= f.label :startTime %><br />
+      <%= f.date_select :startTime %>
+    </div>
+    <div class="field">
+      <%= f.label :endTime %><br />
+      <%= f.date_select :endTime %>
+    </div> 
+
+    </br>
+    <input class="button" role="button" name="commit" type="submit" value="Create" />
+  </p>
+
+
+
+
+<%end%>
+
+    </div>
+      <div class="dropdown" data-init="dropdown" id="myOrdinarySelectBox">
+      <button >Multi Select</button>
+      <select name="dropdown2" multiple>
+          <option>Multi One</option>
+          <option selected>Multi Two</option>
+          <option>Multi Three</option>
+      </select>
+    </div>
+
+<script>
+$( document ).ready(function() {
+        var dropdown = new CUI.Dropdown({
+      element: '#myOrdinarySelectBox'
+    });
+});
+</script>

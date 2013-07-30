@@ -11,7 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130717171200) do
+ActiveRecord::Schema.define(:version => 20130730180458) do
+
+  create_table "company_asset_stats", :force => true do |t|
+    t.integer  "companyID"
+    t.string   "geo"
+    t.integer  "assetType"
+    t.date     "startTime"
+    t.date     "endTime"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "db_calls", :force => true do |t|
     t.string   "indVars"

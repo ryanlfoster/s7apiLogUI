@@ -333,4 +333,8 @@ module DbCallsHelper
     return mongoData, indVars, statsToShow, varyBy
   end
 
+  # def defaultDateHelper(db_call)
+  #   if @db_call[:startDate] ? @db_call[:startDate] : Date.today
+  # end
+
 end

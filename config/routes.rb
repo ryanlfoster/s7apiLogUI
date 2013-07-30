@@ -1,4 +1,9 @@
 S7apiStatUI::Application.routes.draw do
+  get '/company_event' => 'company_event#index'
+
+  resources :company_asset_stats
+  get '/company_asset_stats' => 'company_asset_stats#index'
+
   resources :db_calls
   get '/s7api_log_ui' => 's7api_log_ui#index'
 

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  companyID: 1
+  geo: MyString
+  assetType: 1
+  startTime: 2013-07-30
+  endTime: 2013-07-30
+
+two:
+  companyID: 1
+  geo: MyString
+  assetType: 1
+  startTime: 2013-07-30
+  endTime: 2013-07-30
