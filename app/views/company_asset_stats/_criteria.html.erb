@@ -13,22 +13,22 @@
         <span>Singapore</span>
       </label>
     </div>
-
-    <div class="field">
-      <%= f.label :startTime %><br />
-      <%= f.date_select :startTime %>
-    </div>
-    <div class="field">
-      <%= f.label :endTime %><br />
-      <%= f.date_select :endTime %>
-    </div> 
-
-    </br>
-    <input class="button" role="button" name="commit" type="submit" value="Create" />
   </p>
 
+  <h2>Log Criteria</h2>
 
+  <div class="datepicker" data-init="datepicker">
+    <input type="date" value=<%= @company_asset_stats[:startTime] ? @company_asset_stats[:startTime] : Date.today %> name="company_asset_stats[startTime]">
+    <button class="icon-calendar small">Datepicker</button>
+  </div>
+  to
+  <div class="datepicker" data-init="datepicker">
+    <input type="date" value=<%= @company_asset_stats[:endTime] ? @company_asset_stats[:endTime] : Date.today %> name="company_asset_stats[endTime]">
+    <button class="icon-calendar small">Datepicker</button>
+  </div>
 
+  </br>
+  <input class="button" role="button" name="commit" type="submit" value="Create" />
 
 <%end%>
 
