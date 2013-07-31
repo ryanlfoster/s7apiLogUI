@@ -10,5 +10,6 @@
  *
  *= require_self
  *= require_tree ./css
+ *= require cui-edits.css
  */
  
