@@ -81,8 +81,6 @@ class DbCallsController < ApplicationController
     selectedDisplays.push("pieChart") if params[:draw_pie]
     selectedDisplays.push("table") if params[:draw_table]
 
-
-
     if indVars.empty?
       @db_call.errors.add(:indVars, 'must specify some variables to vary by')
     else

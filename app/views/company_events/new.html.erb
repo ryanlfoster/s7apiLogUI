@@ -1,0 +1,11 @@
+<div id="left">
+  <h1>Query Database</h1>
+  <%= render 'criteria' %>
+  <%= link_to 'Back', company_events_path %>
+</div>
+
+<div id="right">
+  <% if @company_event.errors.any? %>
+    <%= @company_event.errors.full_messages %>  
+  <% end %> 
+</div>

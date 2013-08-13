@@ -11,16 +11,39 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130730180458) do
+ActiveRecord::Schema.define(:version => 20130801201139) do
 
   create_table "company_asset_stats", :force => true do |t|
-    t.integer  "companyID"
-    t.string   "geo"
-    t.integer  "assetType"
-    t.date     "startTime"
-    t.date     "endTime"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.text     "companyID"
+    t.string   "company"
+    t.text     "geo"
+    t.text     "assetType"
+    t.date     "startDate"
+    t.date     "endDate"
+    t.text     "selectedDisplays"
+    t.string   "dateGroup"
+    t.string   "aggregateAssets"
+    t.string   "aggregateCompanies"
+    t.text     "statsToShow"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
+
+  create_table "company_events", :force => true do |t|
+    t.text     "companyID"
+    t.string   "company"
+    t.text     "geo"
+    t.text     "logType"
+    t.text     "fileType"
+    t.text     "selectedDisplays"
+    t.date     "startDate"
+    t.date     "endDate"
+    t.string   "dateGroup"
+    t.string   "aggregateLogs"
+    t.string   "aggregateFiles"
+    t.string   "aggregateCompanies"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
   end
 
   create_table "db_calls", :force => true do |t|

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  companyID: MyText
+  geo: MyText
+  logType: MyText
+  fileType: MyText
+  selectedDisplays: MyText
+  startDate: 2013-08-01
+  endDate: 2013-08-01
+
+two:
+  companyID: MyText
+  geo: MyText
+  logType: MyText
+  fileType: MyText
+  selectedDisplays: MyText
+  startDate: 2013-08-01
+  endDate: 2013-08-01

@@ -2,21 +2,32 @@
 
 <table>
   <tr>
-
+    <th>aggregateCompanies</th>
+    <th>Company</th>
     <th>Company ID(s)</th>
     <th>Geo</th>
+    <th>aggregateAssets</th>
     <th>assetType(s)</th>
-    <th>startTime</th>
-    <th>endTime</th>
+    <th>startDate</th>
+    <th>endDate</th>
+    <th>dateGroup</th>
+    <th>statsToShow</th>
+    <th>selectedDisplays</th>
   </tr>
 
-<% @company_asset_stats.each do |asset_stat| %>
+<% @asset_stat.each do |asset_stat| %>
   <tr>
+    <td><%= asset_stat[:aggregateCompanies] %></td>
+    <td><%= asset_stat[:company] %></td>
     <td><%= asset_stat[:companyID] %></td>
     <td><%= asset_stat[:geo] %></td>
-    <td><%= asset_stat[:assetTye] %></td>
-    <td><%= asset_stat[:startTime] %></td>
-    <td><%= asset_stat[:endTime] %></td>
+    <td><%= asset_stat[:aggregateAssets] %></td>
+    <td><%= asset_stat[:assetType] %></td>
+    <td><%= asset_stat[:startDate] %></td>
+    <td><%= asset_stat[:endDate] %></td>
+    <td><%= asset_stat[:dateGroup] %></td>
+    <td><%= asset_stat[:statsToShow] %></td>
+    <td><%= asset_stat[:selectedDisplays] %></td>
     <td><%= link_to 'Edit', edit_company_asset_stat_path(asset_stat) %></td>
     <td><%= link_to 'Destroy', asset_stat, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>

@@ -1,52 +1,51 @@
 class CompanyAssetStatsController < ApplicationController
   def index
-    @company_asset_stats = CompanyAssetStats.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @asset_stats }
-    end
-  end
-
-  def show
+    @asset_stat = CompanyAssetStat.all
   end
 
   def new
-    @company_asset_stats = CompanyAssetStats.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @asset_stat }
-    end
+    @asset_stat = CompanyAssetStat.new
   end
 
   def edit
+    @asset_stat = CompanyAssetStat.find(params[:id])
   end
 
   def create
-    @company_asset_stats = CompanyAssetStats.new(params[:company_asset_stats])
+    eventParams = allNoneCheck(params[:asset_stat], "assetType")
+    not params[:company].nil? ? eventParams[:companyID] = sepByComma(params[:company_text]) : eventParams[:companyID] = []
+    @asset_stat = CompanyAssetStat.new(params[:asset_stat])
 
-    if @company_asset_stats.save
-      redirect_to :action => "index"
-      # redirect_to :action => "edit", :id => @db_call.id
+    if @asset_stat.save
+      redirect_to :action => "edit", :id => @asset_stat.id
     else
-      # p @db_call.errors
       render 'new'
     end
-    # respond_to do |format|
-    #   if @db_call.save
-    #     format.html { redirect_to @db_call, notice: 'Db call was successfully created.' }
-    #     format.json { render json: @db_call, status: :created, location: @db_call }
-    #   else
-    #     format.html { render action: "new" }
-    #     format.json { render json: @db_call.errors, status: :unprocessable_entity }
-    #   end
-    # end
   end
 
   def update
+    params[:asset_stat][:company] = nil if params[:asset_stat][:company].nil?
+    params[:asset_stat][:aggregateAssets] = nil if params[:asset_stat][:aggregateAssets].nil?
+    eventParams = allNoneCheck(params[:asset_stat], "assetType")
+    not params[:company].nil? ? eventParams[:companyID] = sepByComma(params[:company_text]) : eventParams[:companyID] = []
+    @asset_stat = CompanyAssetStat.find(params[:id])
+    @asset_stat.update_attributes(eventParams)
+
+    if (not @asset_stat.errors.any?) and @asset_stat.save
+      redirect_to :action => "edit", :id => @asset_stat.id
+    else
+      render 'edit'
+    end
   end
 
   def destoy
+    @asset_stat = CompanyAssetStat.find(params[:id])
+    @asset_stat.destroy
+
+    respond_to do |format|
+      format.html { redirect_to company_asset_stats_url }
+      format.json { head :no_content }
+    end
   end
+
 end

@@ -1,0 +1,112 @@
+<%= form_for(@company_event) do |f| %>
+  <p>
+    <div class="selector" name="data_centers">
+      <label><input name="company_event[geo][]" type="checkbox" value="na" <%= 'checked' if @company_event[:geo] and @company_event[:geo].include? 'na' -%> >
+        <span>Dallas</br></span>
+      </label>
+
+      <label><input name="company_event[geo][]" type="checkbox" value="emea" <%= 'checked' if @company_event[:geo] and @company_event[:geo].include? 'emea' -%>>
+        <span>Dublin</span>
+      </label>
+
+      <label><input name="company_event[geo][]" type="checkbox" value="apac" <%= 'checked' if @company_event[:geo] and @company_event[:geo].include? 'apac' -%>>
+        <span>Singapore</span>
+      </label>
+    </div>
+  </p>
+
+  <h2>Log Criteria</h2>
+  <p>
+    <div class="datepicker" data-init="datepicker">
+      <input type="date" value=<%= @company_event[:startDate] ? @company_event[:startDate] : Date.today %> name="company_event[startDate]">
+      <button class="icon-calendar small">Datepicker</button>
+    </div>
+    to
+    <div class="datepicker" data-init="datepicker">
+      <input type="date" value=<%= @company_event[:endDate] ? @company_event[:endDate] : Date.today %> name="company_event[endDate]">
+      <button class="icon-calendar small">Datepicker</button>
+    </div>
+  </p>
+
+  <p>
+    <div class="selector">
+      <label>
+        <input id="dateGroup_daily" name="company_event[dateGroup]" type="radio" value="daily" <%= 'checked' if not @company_event[:dateGroup] or @company_event[:dateGroup].include? 'daily' -%>>
+        <span> Daily </span>
+      </label>
+      <label>
+        <input id="dateGroup_weekly" name="company_event[dateGroup]" type="radio" value="weekly" <%= 'checked' if @company_event[:dateGroup] and @company_event[:dateGroup].include? 'weekly' -%>>
+        <span> Weekly </span>
+      </label>
+      <label>
+        <input id="dateGroup_monthly" name="company_event[dateGroup]" type="radio" value="monthly" <%= 'checked' if @company_event[:dateGroup] and @company_event[:dateGroup].include? 'monthly' -%>>
+        <span> Monthly </span>
+      </label>
+      <label>
+        <input id="dateGroup_aggregate" name="company_event[dateGroup]" type="radio" value="aggregate" <%= 'checked' if @company_event[:dateGroup] and @company_event[:dateGroup].include? 'aggregate' -%>>
+        <span> Aggregate </span>
+      </label>
+    </div>
+  </p>
+
+  <p>
+    <div class="selector">
+      <label><input name="company_event[company]" type="checkbox" value="active" <%= 'checked' if not @company_event[:company].nil? -%>>
+        <span>Company Name(s)</br><input type="text" name="company_text" value="<%= arrToString(@company_event.companyID) if not @company_event[:companyID].nil? -%>"></span>
+      </label>    
+    </div>
+    <label><input type="checkbox" name="company_event[aggregateCompanies]" <%= 'checked' if not @company_event[:aggregateCompanies].nil? -%>><span>Aggregate</span></label>
+  </p>
+
+  <p>
+    Event Type
+    <span hidden><%= checkedLogTypes = @company_event[:logType].to_set %></span>
+    <div class="dropdown" data-init="dropdown">
+      <button >Multi Select</button>
+      <select name="company_event[logType][]" multiple>
+        <option <%= ' selected="selected"' if checkedLogTypes.include? "Display All" %>>Display All</option>
+        <option <%= ' selected="selected"' if checkedLogTypes.include? "Display None" %>>Display None</option>
+        <% allFieldValues('eventTypes', 'typeName', 'eventType').each do |value| %>
+          <option value=<%= value[1] %> <%= ' selected="selected"' if checkedLogTypes.include? value[1].to_s %>><%= value[0] %></option>
+        <% end %>
+      </select>
+    </div>
+    <label><input type="checkbox" name="company_event[aggregateLogs]" <%= 'checked' if not @company_event[:aggregateLogs].nil? -%>><span>Aggregate</span></label>
+  </p>
+    
+  <p>
+  File Type
+  <span hidden><%= checkedFileTypes = @company_event[:fileType].to_set %></span>
+  <div class="dropdown" data-init="dropdown">
+    <button >Multi Select</button>
+    <select name="company_event[fileType][]" multiple>
+      <option <%= ' selected="selected"' if checkedFileTypes.include? "Display All" %>>Display All</option>
+      <option <%= ' selected="selected"' if checkedFileTypes.include? "Display None" %>>Display None</option>
+      <% allFieldValues('fileTypes', 'typeName', 'fileType').each do |value| %>
+        <option value=<%= value[1]%> <%= ' selected="selected"' if checkedFileTypes.include? value[1].to_s %>><%= value[0] %></option>
+      <% end %>
+    </select>
+  </div>
+  <label><input type="checkbox" name="company_event[aggregateFiles]" <%= 'checked' if not @company_event[:aggregateFiles].nil? -%>><span>Aggregate</span></label>
+  </p>
+
+
+ <h2>Display</h2>
+
+    <p><div class="selector">
+      <label><input name="company_event[selectedDisplays][]" type="checkbox" value="table" <%= 'checked' if @company_event[:selectedDisplays] and @company_event[:selectedDisplays].include? 'table' -%>>
+      <span><%= image_tag "Table.svg", width: '50'%></span>
+      </label>
+      <label><input name="company_event[selectedDisplays][]" type="checkbox" value="barChart" <%= 'checked' if @company_event[:selectedDisplays] and @company_event[:selectedDisplays].include? 'barChart' -%>>
+      <span><%= image_tag "GraphBarHorizontal.svg", width: '50'%></span>
+      </label>
+      <label><input name="company_event[selectedDisplays][]" type="checkbox"  value="pieChart"<%= 'checked' if @company_event[:selectedDisplays] and @company_event[:selectedDisplays].include? 'pieChart' -%>>
+      <span><%= image_tag "GraphPie.svg", width: '50'%></span>
+      </label>
+    </div></p>
+
+  </br>
+  <input class="button" role="button" name="commit" type="submit" value="Create" />
+
+<%end%>
+

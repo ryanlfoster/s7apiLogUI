@@ -1,15 +1,15 @@
-<%= form_for @company_asset_stats, url: {action: "create"} do |f| %>
+<%= form_for(@asset_stat) do |f| %>
   <p>
     <div class="selector" name="data_centers">
-      <label><input id="company_asset_stats[geo][]" name="company_asset_stats[geo][]" type="checkbox" value="na" <%= 'checked' if @company_asset_stats[:geo] and @company_asset_stats[:geo].include? 'na' -%> >
-        <span>Dallas</span>
+      <label><input name="asset_stat[geo][]" type="checkbox" value="na" <%= 'checked' if @asset_stat[:geo] and @asset_stat[:geo].include? 'na' -%> >
+        <span>Dallas</br></span>
       </label>
 
-      <label><input id="company_asset_stats[geo][]" name="company_asset_stats[geo][]" type="checkbox" value="emea" <%= 'checked' if @company_asset_stats[:geo] and @company_asset_stats[:geo].include? 'emea' -%>>
+      <label><input name="asset_stat[geo][]" type="checkbox" value="emea" <%= 'checked' if @asset_stat[:geo] and @asset_stat[:geo].include? 'emea' -%>>
         <span>Dublin</span>
       </label>
 
-      <label><input id="company_asset_stats[geo][]" name="company_asset_stats[geo][]" type="checkbox" value="apac" <%= 'checked' if @company_asset_stats[:geo] and @company_asset_stats[:geo].include? 'apac' -%>>
+      <label><input name="asset_stat[geo][]" type="checkbox" value="apac" <%= 'checked' if @asset_stat[:geo] and @asset_stat[:geo].include? 'apac' -%>>
         <span>Singapore</span>
       </label>
     </div>
@@ -18,34 +18,93 @@
   <h2>Log Criteria</h2>
 
   <div class="datepicker" data-init="datepicker">
-    <input type="date" value=<%= @company_asset_stats[:startTime] ? @company_asset_stats[:startTime] : Date.today %> name="company_asset_stats[startTime]">
+    <input type="date" value=<%= @asset_stat[:startDate] ? @asset_stat[:startDate] : Date.today %> name="asset_stat[startDate]">
     <button class="icon-calendar small">Datepicker</button>
   </div>
   to
   <div class="datepicker" data-init="datepicker">
-    <input type="date" value=<%= @company_asset_stats[:endTime] ? @company_asset_stats[:endTime] : Date.today %> name="company_asset_stats[endTime]">
+    <input type="date" value=<%= @asset_stat[:endDate] ? @asset_stat[:endDate] : Date.today %> name="asset_stat[endDate]">
     <button class="icon-calendar small">Datepicker</button>
   </div>
+
+  
+  <p>
+    <div class="selector">
+      <label>
+        <input id="dateGroup_daily" name="asset_stat[dateGroup]" type="radio" value="daily" <%= 'checked' if not @asset_stat[:dateGroup] or @asset_stat[:dateGroup].include? 'daily' -%>>
+        <span> Daily </span>
+      </label>
+      <label>
+        <input id="dateGroup_weekly" name="asset_stat[dateGroup]" type="radio" value="weekly" <%= 'checked' if @asset_stat[:dateGroup] and @asset_stat[:dateGroup].include? 'weekly' -%>>
+        <span> Weekly </span>
+      </label>
+      <label>
+        <input id="dateGroup_monthly" name="asset_stat[dateGroup]" type="radio" value="monthly" <%= 'checked' if @asset_stat[:dateGroup] and @asset_stat[:dateGroup].include? 'monthly' -%>>
+        <span> Monthly </span>
+      </label>
+      <label>
+        <input id="dateGroup_aggregate" name="asset_stat[dateGroup]" type="radio" value="aggregate" <%= 'checked' if @asset_stat[:dateGroup] and @asset_stat[:dateGroup].include? 'aggregate' -%>>
+        <span> Aggregate </span>
+      </label>
+    </div>
+  </p>
+
+  <p> 
+    <div class="selector">
+      <label><input name="asset_stat[company]" type="checkbox" value="active" <%= 'checked' if not @asset_stat[:company].nil? -%>>
+        <span>Company Name(s)</br><input type="text" name="company_text" value="<%= arrToString(@asset_stat.companyID) if not @asset_stat[:companyID].nil? -%>"></span>
+      </label>    
+    </div>
+    <label><input type="checkbox" name="asset_stat[aggregateCompanies]" <%= 'checked' if not @asset_stat[:aggregateCompanies].nil? and not @asset_stat[:company].nil?-%>><span>Aggregate</span></label>
+  </p>
+  
+
+        <select name="company_event[logType][]" multiple>
+        <option <%= ' selected="selected"' if checkedLogTypes.include? "Display All" %>>Display All</option>
+        <option <%= ' selected="selected"' if checkedLogTypes.include? "Display None" %>>Display None</option>
+        <% allFieldValues('eventTypes', 'typeName', 'eventType').each do |value| %>
+          <option value=<%= value[1] %> <%= ' selected="selected"' if checkedLogTypes.include? value[1].to_s %>><%= value[0] %></option>
+        <% end %>
+      </select>
+  Asset Type
+  <div class="dropdown" data-init="dropdown">
+    <button >Multi Select</button>
+    <select name="asset_stat[assetType][]" multiple>
+      <option <%= ' selected="selected"' if checkedLogTypes.include? "Display All" %>>Display All</option>
+      <option <%= ' selected="selected"' if checkedLogTypes.include? "Display None" %>>Display None</option>
+      <% allFieldValues('assetTypes', 'typeName', 'assetType').each do |value| %>
+        <option value=<%= value[1]%>><%= value[0] %></option>
+      <% end %>
+    </select>
+  </div>
+  <label><input type="checkbox" name="asset_stat[aggregateAssets]" <%= 'checked' if not @asset_stat[:aggregateAssets].nil? and not @asset_stat[:assetType].empty? and not @asset_stat[:assetType].include? "Display None" -%>><span>Aggregate</span></label>
+
+    <p><div class="selector">
+      <label><input name="asset_stat[statsToShow][]" type="checkbox" value="total" <%= 'checked' if @asset_stat[:selectedDisplays] and @asset_stat[:selectedDisplays].include? 'apac' -%>>
+      <span>Total</span>
+      </label>
+      <label><input name="asset_stat[statsToShow][]" type="checkbox" value="size" <%= 'checked' if toCheck(@db_call, 'barChart') -%>>
+      <span>Size</span>
+      </label>
+    </div></p>
+
+ <h2>Display</h2>
+
+    <p><div class="selector">
+      <label><input name="asset_stat[selectedDisplays][]" type="checkbox" value="table" <%= 'checked' if @asset_stat[:selectedDisplays] and @asset_stat[:selectedDisplays].include? 'apac' -%>>
+      <span><%= image_tag "Table.svg", width: '50'%></span>
+      </label>
+      <label><input name="asset_stat[selectedDisplays][]" type="checkbox" value="barChart" <%= 'checked' if toCheck(@db_call, 'barChart') -%>>
+      <span><%= image_tag "GraphBarHorizontal.svg", width: '50'%></span>
+      </label>
+      <label><input name="asset_stat[selectedDisplays][]" type="checkbox"  value="pieChart"<%= 'checked' if toCheck(@db_call, 'pieChart') -%>>
+      <span><%= image_tag "GraphPie.svg", width: '50'%></span>
+      </label>
+
+    </div></p>
 
   </br>
   <input class="button" role="button" name="commit" type="submit" value="Create" />
 
 <%end%>
 
-    </div>
-      <div class="dropdown" data-init="dropdown" id="myOrdinarySelectBox">
-      <button >Multi Select</button>
-      <select name="dropdown2" multiple>
-          <option>Multi One</option>
-          <option selected>Multi Two</option>
-          <option>Multi Three</option>
-      </select>
-    </div>
-
-<script>
-$( document ).ready(function() {
-        var dropdown = new CUI.Dropdown({
-      element: '#myOrdinarySelectBox'
-    });
-});
-</script>

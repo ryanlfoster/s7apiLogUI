@@ -274,7 +274,6 @@ module DbCallsHelper
     return [currVal, otherVal].send($statOp[stat])
   end
 
-
   def aggregateDB(db_call)
     client = MongoClient.new('localhost', 27017, :pool_size => 10, :pool_timeout => 15)
     db     = client['s7db']
@@ -332,9 +331,5 @@ module DbCallsHelper
     varyBy = mostVaried(mongoData, indVars)
     return mongoData, indVars, statsToShow, varyBy
   end
-
-  # def defaultDateHelper(db_call)
-  #   if @db_call[:startDate] ? @db_call[:startDate] : Date.today
-  # end
 
 end

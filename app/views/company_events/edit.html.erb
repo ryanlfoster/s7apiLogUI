@@ -4,13 +4,13 @@
 </div>
 
 <div id="right">
-  <% if @asset_stat.errors.any? %>
-    <%= @asset_stat.errors.full_messages %>  
+  <% if @company_event.errors.any? %>
+    <%= @company_event.errors.full_messages %>  
   <% else %>
-    <span hidden><%= selectedDisplays = @asset_stat[:selectedDisplays] %></span>
+    <span hidden><%= selectedDisplays = @company_event[:selectedDisplays] %></span>
     <% if selectedDisplays.include? "barChart" %>
       <span hidden><%= barChartName = "barchart-1" %></span>
-      <span hidden><%= barData = assetBarChartData(@asset_stat) %></span>
+      <span hidden><%= barData = eventBarChartData(@company_event) %></span>
       <% if barData.empty? %>
         <center><h1>No mongo data fits request for bar chart</h1></center>
       <% else %>
@@ -22,8 +22,8 @@
     <% end %>
 
     <% if selectedDisplays.include? "pieChart" %>
-      <span hidden><%= pieChartName = "piechart1" %></span>
-      <span hidden><%= pieData = assetPieChartData(@asset_stat) %></span>
+      <span hidden><%= pieChartName = "piechart-1" %></span>
+      <span hidden><%= pieData = eventPieChartData(@company_event) %></span>
       <% if pieData.empty? %>
         <center><h1>No mongo data fits request for pie chart</h1></center>
       <% else %>
@@ -36,7 +36,7 @@
 
     <% if selectedDisplays.include? "table" %>
       <span hidden><%= tableName = "table1" %></span>
-      <span hidden><%= tableData = assetTableData(@asset_stat) %></span>
+      <span hidden><%= tableData = eventTableData(@company_event) %></span>
       <% if tableData.empty? %>
         <center><h1>No mongo data fits request for table</h1></center>
       <% else %>

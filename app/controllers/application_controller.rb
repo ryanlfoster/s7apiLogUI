@@ -1,9 +1,22 @@
 require 'mongo'
-
 include Mongo
 
 class ApplicationController < ActionController::Base
   protect_from_forgery
+
+  def allNoneCheck(eventParams, *attrs)
+    toCheck = ["Display None", "Display All"]
+    toCheck.each do |stringToCheck|
+      attrs.each do |attribute|
+        if eventParams[attribute].nil?
+          eventParams[attribute] = []
+        elsif eventParams[attribute].include? stringToCheck
+          eventParams[attribute] = [stringToCheck]
+        end
+      end
+    end
+    return eventParams
+  end
 
   # Given a string, returns an array separating the string by commas with white space removed
   def sepByComma(inputString)

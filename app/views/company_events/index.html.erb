@@ -1,0 +1,43 @@
+<h1>Listing companyEvent queries</h1>
+
+<table>
+  <tr>
+    <th>company</th>
+    <th>aggregateCompanies</th>
+  	<th>companyID</th>
+  	<th>geo</th>
+    <th>aggregateFiles</th>
+  	<th>fileType</th>
+    <th>aggregateLogs</th>
+  	<th>logType</th>
+  	<th>selectedDisplays</th>
+  	<th>startDate</th>
+  	<th>endDate</th>
+  	<th>dateGroup</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @company_event.each do |company_event| %>
+  <tr>
+    <td><%= company_event[:company] %></td>
+    <td><%= company_event[:aggregateCompanies] %></td>
+  	<td><%= company_event[:companyID] %></td>
+  	<td><%= company_event[:geo] %></td>
+    <td><%= company_event[:aggregateFiles] %></td>
+  	<td><%= company_event[:fileType] %></td>
+  	<td><%= company_event[:aggregateLogs] %></td>
+    <td><%= company_event[:logType] %></td>
+  	<td><%= company_event[:selectedDisplays] %></td>
+  	<td><%= company_event[:startDate] %></td>
+  	<td><%= company_event[:endDate] %></td>
+  	<td><%= company_event[:dateGroup] %></td>
+    <td><%= link_to 'Edit', edit_company_event_path(company_event) %></td>
+    <td><%= link_to 'Destroy', company_event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br/>
+
+<%= link_to 'New Company Event', new_company_event_path %>
