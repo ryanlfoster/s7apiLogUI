@@ -47,6 +47,8 @@ module CompanyEventsHelper
 
   def eventToGoogleCFormBar(bucketedData, toVary, groupBy = "collectionTime")
     toReturn = {}
+    p "bucketedData"
+    p bucketedData
     bucketedData.each do |labelHash, instances|
       currLabel = labelHash.keys.map {|k| k + " #{labelHash[k]}"}.join(" ")
       groupVars = allHashFieldValues(instances, groupBy).sort
@@ -64,14 +66,12 @@ module CompanyEventsHelper
       currLabel = labelHash.keys.map {|k| k + " #{labelHash[k]}"}.join(" ")
       currChartHash = {}
       instances.each do |instance|
-        p instance
         currIndVar = instance[toVary]
         currValue = instance["totalNumber"]
         currChartHash[currIndVar].nil? ? currChartHash[currIndVar] = currValue : currChartHash[currIndVar] += currValue
       end
       toReturn[currLabel] = [["",""]]+currChartHash.to_a
     end
-    p toReturn
     return toReturn
   end
 
@@ -89,27 +89,6 @@ module CompanyEventsHelper
       currChartArr[groupIndex][0] = instance[groupBy]
     end
     return currChartArr
-  end
-
-## mongoData Prettify Methods ##
-
-def processData(mongoData, event)
-    mongoData = mergeIDHash(mongoData)
-    mongoData = eventDateGroupData(mongoData, event)
-    mongoData = verbosifyTypeFields(mongoData)
-    return mongoData
-  end
-
-  def mergeIDHash(mongoData)
-    toReturn = []
-    mongoData.each do |instance|
-      currHash = instance.except("_id")
-      instance["_id"].keys.each do |var|
-        currHash[var] = instance["_id"][var]
-      end
-      toReturn.push(currHash)
-    end
-    return toReturn
   end
 
   def eventMostVaried(mongoData, vars)
@@ -134,7 +113,28 @@ def processData(mongoData, event)
     end
   end
 
-  def verbosifyTypeFields(mongoData)
+## mongoData Prettify Methods ##
+
+def processData(mongoData, event)
+    mongoData = mergeIDHash(mongoData)
+    mongoData = eventDateGroupData(mongoData, event)
+    mongoData = eventVerbosifyTypeFields(mongoData)
+    return mongoData
+  end
+
+  def mergeIDHash(mongoData)
+    toReturn = []
+    mongoData.each do |instance|
+      currHash = instance["_id"]
+      instance.except("_id").keys.each do |var|
+        currHash[var] = instance[var]
+      end
+      toReturn.push(currHash)
+    end
+    return toReturn
+  end
+
+  def eventVerbosifyTypeFields(mongoData)
     fields = mongoData[0].except("totalNumber", "collectionTime", "geo").keys
     @company, @fileType, @eventType = {}, {}, {}
     mongoData.each do |instance|
@@ -169,6 +169,7 @@ def processData(mongoData, event)
     # gets queried data from mongo
     aggOutput = coll.aggregate(dateMatchQuery + varMatchQuery + varGroupQuery)
     p dateMatchQuery + varMatchQuery + varGroupQuery
+    client.close
     return aggOutput
   end
 
@@ -192,9 +193,10 @@ def processData(mongoData, event)
   # expected output: Hash of the form {"$group" => {_id: {companyName: "$companyName", apiEvent: "$apiEvent"}, sumnumExecs: {"$sum" => "$numExecs"}}}
   def eventGenMongoGroupQuery(event)
     queryHash = {"_id" => {"collectionTime" => "$collectionTime"}}
-    queryHash["_id"]["eventType"] = "$eventType" if not event[:aggregateLogs] and not event[:logType].empty? and not event[:logType].include? "Select None"
-    queryHash["_id"]["fileType"] = "$fileType" if not event[:aggregateFiles] and not event[:fileType].empty? and not event[:fileType].include? "Select None"
-    queryHash["_id"]["company"] = "$company" if event[:company] and not event[:aggregateCompanies]
+    queryHash["_id"]["eventType"] = "$eventType" if not event[:aggregateLogs] and not event[:logType].empty? and (event[:logType].length != 1 or event[:logType].include? "Display All")
+    queryHash["_id"]["fileType"] = "$fileType" if not event[:aggregateFiles] and not event[:fileType].empty? and (event[:fileType].length != 1 or event[:fileType].include? "Display All")
+    queryHash["_id"]["company"] = "$company" if event[:company] and not event[:aggregateCompanies] and event[:companyID].length != 1
+    queryHash["_id"]["geo"] = "$geo" if event[:geo].length != 1
     queryHash["totalNumber"] = {"$sum" => "$totalNumber"}
 
     return [{"$group" => queryHash}]

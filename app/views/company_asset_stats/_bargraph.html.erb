@@ -19,12 +19,15 @@
       var data = new google.visualization.arrayToDataTable(<%=raw graphData.as_json%>, false);
 
       // Set chart options
-      var options = { 'width':1000,
-                      'height':<%=[graphData.as_json.length*graphData.as_json[0].length*2, 500].max%>,
-                      'title': "<%= createLabel(labels) %>"};
+      var options = { 'title': "<%= labels %>",
+                      'width': <%= [graphData.length*graphData[0].length*10, 800].max %>,
+                      'height': 600,
+                      seriesType: "bars",
+                      series: {<%= graphData[0].length() -2 %>: {type: "line"}}
+                    };
 
       // Instantiate and draw our chart, passing in some options.
-      var barChart = new google.visualization.BarChart(document.getElementById('<%=barChartName%>'));
+      var barChart = new google.visualization.ComboChart(document.getElementById('<%=barChartName%>'));
       barChart.draw(data, options);
     }
     </script>

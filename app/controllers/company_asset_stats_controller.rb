@@ -14,7 +14,10 @@ class CompanyAssetStatsController < ApplicationController
   def create
     eventParams = allNoneCheck(params[:asset_stat], "assetType")
     not params[:company].nil? ? eventParams[:companyID] = sepByComma(params[:company_text]) : eventParams[:companyID] = []
-    @asset_stat = CompanyAssetStat.new(params[:asset_stat])
+    eventParams[:aggregateAssets] = nil if eventParams[:assetType].empty? or eventParams[:assetType].include? "Display None"
+    eventParams[:aggregateCompanies] = nil if eventParams[:aggregateCompanies].nil? or eventParams[:company].nil?
+    
+    @asset_stat = CompanyAssetStat.new(eventParams)
 
     if @asset_stat.save
       redirect_to :action => "edit", :id => @asset_stat.id
@@ -24,10 +27,13 @@ class CompanyAssetStatsController < ApplicationController
   end
 
   def update
-    params[:asset_stat][:company] = nil if params[:asset_stat][:company].nil?
-    params[:asset_stat][:aggregateAssets] = nil if params[:asset_stat][:aggregateAssets].nil?
     eventParams = allNoneCheck(params[:asset_stat], "assetType")
     not params[:company].nil? ? eventParams[:companyID] = sepByComma(params[:company_text]) : eventParams[:companyID] = []
+    eventParams[:company] = nil if eventParams[:company].nil?
+    eventParams[:aggregateAssets] = nil if eventParams[:aggregateAssets].nil? or eventParams[:assetType].empty? or eventParams[:assetType].include? "Display None"
+    eventParams[:aggregateCompanies] = nil if eventParams[:aggregateCompanies].nil? or eventParams[:company].nil?
+    eventParams[:statsToShow] = nil if eventParams[:statsToShow].nil?
+    
     @asset_stat = CompanyAssetStat.find(params[:id])
     @asset_stat.update_attributes(eventParams)
 

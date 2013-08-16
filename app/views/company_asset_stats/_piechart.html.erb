@@ -21,7 +21,7 @@
       // Set chart options
       var options = { 'width':1000,
                       'height':<%=[graphData.as_json.length*graphData.as_json[0].length*2, 500].max%>,
-                      'title': "<%= createLabel(labels) %>" };
+                      'title': "<%= labels %>" };
 
       // Instantiate and draw our chart, passing in some options.
       var pieChart = new google.visualization.PieChart(document.getElementById('<%=pieChartName%>'));

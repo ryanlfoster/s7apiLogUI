@@ -58,46 +58,39 @@
     <label><input type="checkbox" name="asset_stat[aggregateCompanies]" <%= 'checked' if not @asset_stat[:aggregateCompanies].nil? and not @asset_stat[:company].nil?-%>><span>Aggregate</span></label>
   </p>
   
-
-        <select name="company_event[logType][]" multiple>
-        <option <%= ' selected="selected"' if checkedLogTypes.include? "Display All" %>>Display All</option>
-        <option <%= ' selected="selected"' if checkedLogTypes.include? "Display None" %>>Display None</option>
-        <% allFieldValues('eventTypes', 'typeName', 'eventType').each do |value| %>
-          <option value=<%= value[1] %> <%= ' selected="selected"' if checkedLogTypes.include? value[1].to_s %>><%= value[0] %></option>
-        <% end %>
-      </select>
   Asset Type
+  <span hidden><%= checkedAssetTypes = @asset_stat[:assetType].to_set %></span>
   <div class="dropdown" data-init="dropdown">
     <button >Multi Select</button>
     <select name="asset_stat[assetType][]" multiple>
-      <option <%= ' selected="selected"' if checkedLogTypes.include? "Display All" %>>Display All</option>
-      <option <%= ' selected="selected"' if checkedLogTypes.include? "Display None" %>>Display None</option>
+      <option <%= 'selected="selected"' if checkedAssetTypes.include? "Display All" %>>Display All</option>
+      <option <%= 'selected="selected"' if checkedAssetTypes.include? "Display None" %>>Display None</option>
       <% allFieldValues('assetTypes', 'typeName', 'assetType').each do |value| %>
-        <option value=<%= value[1]%>><%= value[0] %></option>
+        <option value=<%= value[1]%> <%= ' selected="selected"' if checkedAssetTypes.include? value[1].to_s %>><%= value[0] %></option>
       <% end %>
     </select>
   </div>
-  <label><input type="checkbox" name="asset_stat[aggregateAssets]" <%= 'checked' if not @asset_stat[:aggregateAssets].nil? and not @asset_stat[:assetType].empty? and not @asset_stat[:assetType].include? "Display None" -%>><span>Aggregate</span></label>
+  <label><input type="checkbox" name="asset_stat[aggregateAssets]" <%= 'checked' if not @asset_stat[:aggregateAssets].nil? -%>><span>Aggregate</span></label>
 
     <p><div class="selector">
-      <label><input name="asset_stat[statsToShow][]" type="checkbox" value="total" <%= 'checked' if @asset_stat[:selectedDisplays] and @asset_stat[:selectedDisplays].include? 'apac' -%>>
-      <span>Total</span>
+      <label><input name="asset_stat[statsToShow][]" type="checkbox" value="totalNumber" <%= 'checked' if @asset_stat[:statsToShow] and @asset_stat[:statsToShow].include? 'totalNumber' -%>>
+      <span>Total Number</span>
       </label>
-      <label><input name="asset_stat[statsToShow][]" type="checkbox" value="size" <%= 'checked' if toCheck(@db_call, 'barChart') -%>>
-      <span>Size</span>
+      <label><input name="asset_stat[statsToShow][]" type="checkbox" value="totalFileSize" <%= 'checked' if @asset_stat[:statsToShow] and @asset_stat[:statsToShow].include? 'totalFileSize' -%>>
+      <span>Total File Size</span>
       </label>
     </div></p>
 
  <h2>Display</h2>
 
     <p><div class="selector">
-      <label><input name="asset_stat[selectedDisplays][]" type="checkbox" value="table" <%= 'checked' if @asset_stat[:selectedDisplays] and @asset_stat[:selectedDisplays].include? 'apac' -%>>
+      <label><input name="asset_stat[selectedDisplays][]" type="checkbox" value="table" <%= 'checked' if @asset_stat[:selectedDisplays] and @asset_stat[:selectedDisplays].include? 'table' -%>>
       <span><%= image_tag "Table.svg", width: '50'%></span>
       </label>
-      <label><input name="asset_stat[selectedDisplays][]" type="checkbox" value="barChart" <%= 'checked' if toCheck(@db_call, 'barChart') -%>>
+      <label><input name="asset_stat[selectedDisplays][]" type="checkbox" value="barChart" <%= 'checked' if @asset_stat[:selectedDisplays] and @asset_stat[:selectedDisplays].include? 'barChart' -%>>
       <span><%= image_tag "GraphBarHorizontal.svg", width: '50'%></span>
       </label>
-      <label><input name="asset_stat[selectedDisplays][]" type="checkbox"  value="pieChart"<%= 'checked' if toCheck(@db_call, 'pieChart') -%>>
+      <label><input name="asset_stat[selectedDisplays][]" type="checkbox"  value="pieChart"<%= 'checked' if @asset_stat[:selectedDisplays] and @asset_stat[:selectedDisplays].include? 'pieChart' -%>>
       <span><%= image_tag "GraphPie.svg", width: '50'%></span>
       </label>
 
